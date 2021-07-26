@@ -41,7 +41,8 @@ module.exports = function (/* ctx */) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
-      'material-icons' // optional, you are not bound to it
+      'material-icons', // optional, you are not bound to it
+      'mdi-v5'
     ],
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
@@ -81,9 +82,20 @@ module.exports = function (/* ctx */) {
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
-      iconSet: 'material-icons', // Quasar icon set
+      iconSet: 'mdi-v5', // Quasar icon set
       lang: 'en-us', // Quasar language pack
-      config: {},
+      config: {
+        brand: {
+          primary: '#6bb5b5',
+          secondary: '#f4f3ee',
+          accent: '#9C27B0',
+          dark: '#222121',
+          positive: '#54b07d',
+          negative: '#eb5e27',
+          info: '#69b3c7',
+          warning: '#f3bb44'
+        }
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
