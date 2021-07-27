@@ -1,7 +1,7 @@
 <template>
-  <q-page class="row q-col-gutter-md" padding>
+  <q-page class="row q-col-gutter-md bg-secondary" padding>
     <div class="col-md-3 col-sm-12 col-xs-12" v-for="card in 4" :key="card">
-      <q-card class="my-card" flat bordered>
+      <q-card class="my-card"  bordered>
         <q-card-section horizontal>
           <q-card-section class="q-pt-xs">
             <!-- <div class="text-overline">Overline</div> -->
