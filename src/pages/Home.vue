@@ -4,7 +4,9 @@
       <cards-skeleton />
     </div>
     <div v-else>
-      <cards-dashboard />
+      <cards-dashboard
+        @refresh="loadPage(true)"
+      />
     </div>
   </q-page>
 </template>
@@ -22,9 +24,18 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      this.load = false
-    }, 1200)
+    this.loadPage()
+  },
+  methods: {
+    loadPage (notify = false) {
+      this.load = true
+      setTimeout(() => {
+        this.load = false
+        if (notify) {
+          this.$notifySuccess('Successfully Updated')
+        }
+      }, 1200)
+    }
   }
 }
 </script>

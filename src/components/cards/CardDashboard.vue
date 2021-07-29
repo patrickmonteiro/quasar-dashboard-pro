@@ -21,7 +21,7 @@
     <q-separator />
 
     <q-card-actions>
-      <q-btn flat color="grey-7" :icon="actionIcon">
+      <q-btn flat color="grey-7" :icon="actionIcon" @click="$emit('refresh')">
         {{ actionText }}
       </q-btn>
     </q-card-actions>

@@ -27,13 +27,14 @@
               3
             </q-badge>
           </q-btn>
-          <q-btn
+          <button-dropdown />
+          <!-- <q-btn
             flat
             dense
             round
             icon="mdi-cog-outline"
             aria-label="Config"
-          />
+          /> -->
         </div>
       </q-toolbar>
     </q-header>
@@ -77,12 +78,20 @@ const linksData = [
     title: 'Home',
     icon: 'mdi-home',
     routeName: 'home'
+  },
+  {
+    title: 'Maps',
+    icon: 'mdi-map',
+    routeName: 'map'
   }
 ]
 
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
+  components: {
+    EssentialLink,
+    ButtonDropdown: () => import('components/button/ButtonDropdown')
+  },
   data () {
     return {
       leftDrawerOpen: false,

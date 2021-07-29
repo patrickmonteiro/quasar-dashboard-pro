@@ -1,5 +1,5 @@
 <template>
-<div class="row q-col-gutter-md">
+<div class="row q-col-gutter-lg">
   <div
     class="col-md-3 col-sm-12 col-xs-12"
     v-for="(card, index) in cards"
@@ -10,6 +10,7 @@
       :sub-title="card.subtitle"
       :icon="card.icon"
       :color-icon="card.colorIcon"
+      @refresh="$emit('refresh')"
     />
   </div>
 </div>
