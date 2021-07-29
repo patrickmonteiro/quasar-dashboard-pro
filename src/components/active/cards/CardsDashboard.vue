@@ -1,5 +1,6 @@
 <template>
-<div class="row q-col-gutter-lg">
+<cards-skeleton v-if="load" />
+<div v-else class="row q-col-gutter-lg">
   <div
     class="col-md-3 col-sm-12 col-xs-12"
     v-for="(card, index) in cards"
@@ -10,7 +11,7 @@
       :sub-title="card.subtitle"
       :icon="card.icon"
       :color-icon="card.colorIcon"
-      @refresh="$emit('refresh')"
+      @refresh="loadPage"
     />
   </div>
 </div>
@@ -20,10 +21,12 @@
 export default {
   name: 'CardsDashboardActive',
   components: {
-    CardDashboard: () => import('components/cards/CardDashboard')
+    CardDashboard: () => import('components/cards/CardDashboard'),
+    CardsSkeleton: () => import('components/skeletons/Cards')
   },
   data () {
     return {
+      load: true,
       cards: [
         {
           title: 'DataBase',
@@ -50,6 +53,20 @@ export default {
           colorIcon: 'green-5'
         }
       ]
+    }
+  },
+  mounted () {
+    this.loadPage()
+  },
+  methods: {
+    loadPage (notify = false) {
+      this.load = true
+      setTimeout(() => {
+        this.load = false
+        if (notify) {
+          this.$notifySuccess('Successfully Updated')
+        }
+      }, 1200)
     }
   }
 }

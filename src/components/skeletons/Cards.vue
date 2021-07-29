@@ -1,5 +1,5 @@
 <template>
-<div class="row q-col-gutter-md">
+<div class="row q-col-gutter-lg">
   <div
     class="col-md-3 col-sm-12 col-xs-12"
     v-for="card in showNumber"
@@ -18,7 +18,7 @@
         </q-item-section>
       </q-item>
 
-      <q-skeleton height="80px" square />
+      <q-skeleton height="50px" square />
 
       <q-card-actions align="left" class="q-gutter-md">
         <q-skeleton type="QBtn" />
