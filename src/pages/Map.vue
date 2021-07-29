@@ -41,7 +41,7 @@ export default {
       latitude: '',
       longitude: '',
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      zoom: 20,
+      zoom: 10,
       center: [],
       markerLatLng: [],
       picoleLatLng: [],
