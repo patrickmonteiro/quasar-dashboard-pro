@@ -8,7 +8,7 @@
         @refresh="loadPage(true)"
       />
       <div class="row q-pt-md q-col-gutter-lg">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <q-card bordered>
             <q-card-section class="">
               <map-leaflet-active
