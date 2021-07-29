@@ -7,6 +7,17 @@
       <cards-dashboard
         @refresh="loadPage(true)"
       />
+      <div class="row q-pt-md q-col-gutter-lg">
+        <div class="col-6">
+          <q-card bordered>
+            <q-card-section class="">
+              <map-leaflet-active
+                :height="50"
+              />
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -16,7 +27,8 @@ export default {
   name: 'PageHome',
   components: {
     CardsDashboard: () => import('components/active/cards/CardsDashboard'),
-    CardsSkeleton: () => import('components/skeletons/Cards')
+    CardsSkeleton: () => import('components/skeletons/Cards'),
+    MapLeafletActive: () => import('components/active/map/MapLeaflet')
   },
   data () {
     return {
