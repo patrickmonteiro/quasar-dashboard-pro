@@ -2,7 +2,9 @@
   <q-item
     clickable
     class="text-grey-4"
-    @click="goTo(routeName)"
+    :to="{ name: routeName }"
+    exact
+    active-class="bg-grey-9"
   >
     <q-item-section
       v-if="icon"

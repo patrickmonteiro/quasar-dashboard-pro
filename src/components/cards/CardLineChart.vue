@@ -1,14 +1,12 @@
 <template>
-  <div class="col-md-8 col-sm-12 col-xs-12">
-    <q-card bordered>
+  <div class="col-md-4 col-sm-12 col-xs-12">
+    <q-card bordered class="fit">
       <q-card-section class="q-pb-xs">
         <div class="text-h6">Quasar developers</div>
       </q-card-section>
       <q-separator />
       <q-card-section class="">
-        <map-leaflet-active
-          :height="50"
-        />
+        <apex-line-small />
       </q-card-section>
     </q-card>
   </div>
@@ -16,9 +14,9 @@
 
 <script>
 export default {
-  name: 'CardMap',
+  name: 'CardLineChart',
   components: {
-    MapLeafletActive: () => import('components/active/map/MapLeaflet')
+    ApexLineSmall: () => import('components/active/apexcharts/LineSmall')
   }
 }
 </script>

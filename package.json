@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "apexcharts": "^3.27.3",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "quasar": "^1.0.0",
+    "vue-apexcharts": "^1.6.2",
     "vue-i18n": "^8.0.0",
     "vue2-leaflet": "^2.7.1"
   },
