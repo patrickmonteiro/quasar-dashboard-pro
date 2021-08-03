@@ -5,16 +5,16 @@
     </q-card-section>
     <q-separator />
     <q-card-section class="">
-      <apex-line-small />
+      <apex-line-column />
     </q-card-section>
   </q-card>
 </template>
 
 <script>
 export default {
-  name: 'CardLineChart',
+  name: 'CardLineColumnChart',
   components: {
-    ApexLineSmall: () => import('components/active/apexcharts/LineSmall')
+    ApexLineColumn: () => import('components/active/apexcharts/LineColumn')
   }
 }
 </script>

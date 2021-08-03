@@ -3,7 +3,9 @@
     <cards-dashboard />
     <div class="row q-pt-md q-col-gutter-lg">
       <card-map />
-      <card-line-chart />
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <card-line-chart />
+      </div>
     </div>
   </q-page>
 </template>

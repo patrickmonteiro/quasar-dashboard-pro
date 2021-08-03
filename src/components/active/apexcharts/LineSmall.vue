@@ -3,16 +3,18 @@
 </template>
 
 <script>
+import { colors } from 'quasar'
+const { getBrand } = colors
 export default {
   name: 'ApexLine',
   data () {
     return {
       series: [{
-        name: 'Desktops',
+        name: 'Line',
         data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
       }],
       chartOptions: {
-        colors: ['#17ead9', '#17ead9', '#f02fc2'],
+        colors: [getBrand('positive'), getBrand('secondary'), getBrand('warning')],
         animations: {
           enabled: true,
           easing: 'easeinout',
@@ -45,7 +47,7 @@ export default {
           enabled: false
         },
         title: {
-          text: 'Line Real Time',
+          text: 'Line',
           align: 'left',
           style: {
             color: '#111'

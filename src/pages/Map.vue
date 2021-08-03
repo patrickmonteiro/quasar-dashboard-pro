@@ -1,8 +1,6 @@
 <template>
   <q-page class="bg-secondary" padding>
-    <map-leaflet-active
-      :height="50"
-    />
+    <map-leaflet-active />
   </q-page>
 </template>
 

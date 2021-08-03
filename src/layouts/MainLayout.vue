@@ -83,6 +83,11 @@ const linksData = [
     title: 'Maps',
     icon: 'mdi-map',
     routeName: 'map'
+  },
+  {
+    title: 'Charts',
+    icon: 'mdi-chart-bar',
+    routeName: 'charts'
   }
 ]
 
