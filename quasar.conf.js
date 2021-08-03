@@ -90,7 +90,7 @@ module.exports = function (/* ctx */) {
         brand: {
           primary: '#6bb5b5',
           secondary: '#f4f3ee',
-          accent: '#9C27B0',
+          accent: '#9d5ba8',
           dark: '#222121',
           positive: '#54b07d',
           negative: '#eb5e27',
