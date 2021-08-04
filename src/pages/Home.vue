@@ -12,13 +12,17 @@
 </template>
 
 <script>
+import CardsDashboard from 'components/active/cards/CardsDashboard'
+import CardMap from 'components/cards/CardMap'
+import CardLineChart from 'components/cards/CardLineChart'
+import CardCircularProgressList from 'components/cards/CardCircularProgressList'
 export default {
   name: 'PageHome',
   components: {
-    CardsDashboard: () => import('components/active/cards/CardsDashboard'),
-    CardMap: () => import('components/cards/CardMap'),
-    CardLineChart: () => import('components/cards/CardLineChart'),
-    CardCircularProgressList: () => import('components/cards/CardCircularProgressList')
+    CardsDashboard,
+    CardMap,
+    CardLineChart,
+    CardCircularProgressList
   },
   data () {
     return {

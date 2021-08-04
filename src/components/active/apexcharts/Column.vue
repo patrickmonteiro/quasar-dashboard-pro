@@ -1,5 +1,9 @@
 <template>
+  <transition
+    enter-active-class="animated fadeIn"
+  >
   <apexchart type="bar" height="320" :options="chartOptions" :series="series" />
+  </transition>
 </template>
 
 <script>

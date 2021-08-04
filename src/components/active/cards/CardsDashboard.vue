@@ -1,28 +1,34 @@
 <template>
-<cards-skeleton v-if="load" />
-<div v-else class="row q-col-gutter-lg">
-  <div
-    class="col-md-3 col-sm-12 col-xs-12"
-    v-for="(card, index) in cards"
-    :key="index"
-  >
-    <card-dashboard
-      :title="card.title"
-      :sub-title="card.subtitle"
-      :icon="card.icon"
-      :color-icon="card.colorIcon"
-      @refresh="loadPage"
-    />
+<transition-group
+  enter-active-class="animated fadeIn"
+>
+  <cards-skeleton v-if="load" key="skeleton" />
+  <div v-else class="row q-col-gutter-lg" key="row">
+    <div
+      class="col-md-3 col-sm-12 col-xs-12"
+      v-for="(card, index) in cards"
+      :key="index"
+    >
+      <card-dashboard
+        :title="card.title"
+        :sub-title="card.subtitle"
+        :icon="card.icon"
+        :color-icon="card.colorIcon"
+        @refresh="loadPage"
+      />
+    </div>
   </div>
-</div>
+</transition-group>
 </template>
 
 <script>
+import CardDashboard from 'components/cards/CardDashboard'
+import CardsSkeleton from 'components/skeletons/Cards'
 export default {
   name: 'CardsDashboardActive',
   components: {
-    CardDashboard: () => import('components/cards/CardDashboard'),
-    CardsSkeleton: () => import('components/skeletons/Cards')
+    CardDashboard,
+    CardsSkeleton
   },
   data () {
     return {

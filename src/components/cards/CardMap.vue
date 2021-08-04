@@ -15,10 +15,11 @@
 </template>
 
 <script>
+import MapLeafletActive from 'components/active/map/MapLeaflet'
 export default {
   name: 'CardMap',
   components: {
-    MapLeafletActive: () => import('components/active/map/MapLeaflet')
+    MapLeafletActive
   }
 }
 </script>
