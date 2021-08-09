@@ -1,8 +1,8 @@
 <template>
 <div class="row q-pt-md q-col-gutter-lg">
   <div
-    v-for="progress in progressList"
-    :key="progress"
+    v-for="(progress, index) in progressList"
+    :key="index"
     class="col-md-3 col-sm-12 col-xs-12 text-center"
   >
     <card-circular-progress

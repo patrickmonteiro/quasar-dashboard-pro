@@ -6,7 +6,9 @@ const routes = [
     children: [
       { path: '', name: 'home', component: () => import('src/pages/Home.vue') },
       { path: 'map', name: 'map', component: () => import('src/pages/Map.vue') },
-      { path: 'charts', name: 'charts', component: () => import('src/pages/Charts.vue') }
+      { path: 'charts', name: 'charts', component: () => import('src/pages/Charts.vue') },
+      { path: 'audio', name: 'audio', component: () => import('src/pages/Audio.vue') },
+      { path: 'video', name: 'video', component: () => import('src/pages/Video.vue') }
     ]
   },
 

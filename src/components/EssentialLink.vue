@@ -1,5 +1,6 @@
 <template>
   <q-item
+    v-if="childrens.length <= 0"
     clickable
     class="text-grey-4"
     :to="{ name: routeName }"
@@ -20,6 +21,35 @@
       </q-item-label> -->
     </q-item-section>
   </q-item>
+  <q-expansion-item
+    v-else
+    expand-separator
+    :icon="icon"
+    :label="title"
+    class="text-grey-4"
+    active-class="bg-grey-9"
+  >
+    <q-item
+      v-for="(children, index) in childrens"
+      :key="index"
+      clickable
+      class="text-grey-4 q-pl-lg"
+      :to="{ name: children.routeName }"
+      exact
+      active-class="bg-grey-9"
+    >
+      <q-item-section
+        v-if="children.icon"
+        avatar
+      >
+        <q-icon :name="children.icon" />
+      </q-item-section>
+
+      <q-item-section>
+        <q-item-label>{{ children.title }}</q-item-label>
+      </q-item-section>
+    </q-item>
+  </q-expansion-item>
 </template>
 
 <script>
@@ -41,6 +71,11 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    childrens: {
+      type: Array,
+      required: false,
+      default: () => []
     }
   },
   methods: {

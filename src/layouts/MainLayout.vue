@@ -87,7 +87,30 @@ const linksData = [
   {
     title: 'Charts',
     icon: 'mdi-chart-bar',
-    routeName: 'charts'
+    routeName: '',
+    childrens: [
+      {
+        title: 'ApexCharts',
+        icon: 'mdi-chart-bell-curve',
+        routeName: 'charts'
+      }
+    ]
+  },
+  {
+    title: 'Audio & Vídeo',
+    icon: 'mdi-play-circle-outline',
+    childrens: [
+      {
+        title: 'Audio',
+        icon: 'mdi-volume-high',
+        routeName: 'audio'
+      },
+      {
+        title: 'Video',
+        icon: 'mdi-video-outline',
+        routeName: 'video'
+      }
+    ]
   }
 ]
 
