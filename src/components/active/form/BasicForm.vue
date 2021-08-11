@@ -1,17 +1,20 @@
 <template>
   <q-card bordered class="fit">
     <q-card-section class="q-pb-xs">
-      <div class="text-h6">Basic Form</div>
+      <div class="text-h6">{{ title }}</div>
     </q-card-section>
     <q-separator />
     <q-card-section>
       <q-form
         @submit="onSubmit"
         @reset="onReset"
-        class="q-gutter-y-md"
+        class="q-gutter-y-xs"
       >
         <q-input
-          outlined
+          :outlined="outlined"
+          :filled="filled"
+          :rounded="rounded"
+          :stack-label="stackLabel"
           v-model="form.name"
           label="Name"
           lazy-rules
@@ -19,7 +22,10 @@
         />
 
         <q-input
-          outlined
+          :outlined="outlined"
+          :filled="filled"
+          :rounded="rounded"
+          :stack-label="stackLabel"
           v-model="form.email"
           label="Email"
           lazy-rules
@@ -39,6 +45,33 @@
 <script>
 export default {
   name: 'BasicForm',
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'Basic Form'
+    },
+    outlined: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    filled: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    rounded: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    stackLabel: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   data () {
     return {
       form: {
