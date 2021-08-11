@@ -97,7 +97,7 @@ const linksData = [
     ]
   },
   {
-    title: 'Audio & Vídeo',
+    title: 'Audio & Video',
     icon: 'mdi-play-circle-outline',
     childrens: [
       {
@@ -110,6 +110,22 @@ const linksData = [
         icon: 'mdi-video-outline',
         routeName: 'video'
       }
+    ]
+  },
+  {
+    title: 'Forms',
+    icon: 'mdi-format-list-checks',
+    childrens: [
+      {
+        title: 'Basic',
+        icon: 'mdi-format-list-checkbox',
+        routeName: 'form'
+      }
+      // {
+      //   title: 'Video',
+      //   icon: 'mdi-video-outline',
+      //   routeName: 'video'
+      // }
     ]
   }
 ]
