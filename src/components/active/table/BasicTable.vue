@@ -1,24 +1,35 @@
 <template>
-<div>
   <q-table
-    title="Treats"
-    :rows="rows"
-    row-key="calories"
-  />
-</div>
+    title="Users"
+    :data="rows"
+    :columns="columns"
+    row-key="name"
+  ></q-table>
 </template>
 
 <script>
 export default {
-  name: 'BasicTable',
+  name: 'BasicleTable',
   data () {
     return {
       columns: [
-        { name: 'calories', align: 'center', label: 'Calories', field: 'calories', sortable: true }
+        {
+          name: 'name',
+          field: 'name',
+          label: 'Name',
+          align: 'left',
+          required: true
+        }
       ],
       rows: [
         {
-          calories: 159
+          name: 'Patrick'
+        },
+        {
+          name: 'Luiz'
+        },
+        {
+          name: 'Arnold'
         }
       ]
     }
