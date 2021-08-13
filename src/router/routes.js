@@ -9,7 +9,8 @@ const routes = [
       { path: 'charts', name: 'charts', component: () => import('src/pages/Charts.vue') },
       { path: 'audio', name: 'audio', component: () => import('src/pages/Audio.vue') },
       { path: 'video', name: 'video', component: () => import('src/pages/Video.vue') },
-      { path: 'form', name: 'form', component: () => import('src/pages/Form.vue') }
+      { path: 'form', name: 'form', component: () => import('src/pages/Form.vue') },
+      { path: 'tables', name: 'tables', component: () => import('src/pages/Tables.vue') }
     ]
   },
 

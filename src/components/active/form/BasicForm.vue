@@ -15,23 +15,46 @@
           :filled="filled"
           :rounded="rounded"
           :stack-label="stackLabel"
+          :standout="standout"
+          :dense="dense"
+          :borderless="borderless"
+          clearable
           v-model="form.name"
           label="Name"
           lazy-rules
           :rules="[val => val !== null && val !== '' || 'Please type your name']"
-        />
+        >
+          <template v-slot:prepend v-if="prependIcon">
+            <q-icon name="mdi-account" />
+          </template>
+          <template v-slot:append v-if="appendIcon">
+            <q-icon name="mdi-account" />
+          </template>
+        </q-input>
 
         <q-input
           :outlined="outlined"
           :filled="filled"
           :rounded="rounded"
           :stack-label="stackLabel"
+          :standout="standout"
+          :dense="dense"
+          :borderless="borderless"
+          clearable
           v-model="form.email"
           label="Email"
           lazy-rules
           :rules="[val => val !== null && val !== '' || 'Please type your email']"
           type="email"
-        />
+        >
+          <template v-slot:prepend v-if="prependIcon">
+            <q-icon name="mdi-email" />
+          </template>
+          <template v-slot:append v-if="appendIcon">
+            <q-icon name="mdi-email" />
+          </template>
+
+        </q-input>
 
         <div class="row justify-end">
           <q-btn label="Reset" color="primary" type="reset" flat class="q-ml-sm" />
@@ -67,6 +90,36 @@ export default {
       default: false
     },
     stackLabel: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    standout: {
+      type: Boolean || String,
+      required: false,
+      default: false
+    },
+    dense: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    borderless: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    prependIcon: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    appendIcon: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    clearable: {
       type: Boolean,
       required: false,
       default: false

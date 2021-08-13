@@ -127,6 +127,11 @@ const linksData = [
       //   routeName: 'video'
       // }
     ]
+  },
+  {
+    title: 'Tables',
+    icon: 'mdi-table',
+    routeName: 'tables'
   }
 ]
 
