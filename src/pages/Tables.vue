@@ -44,6 +44,29 @@
           :search="search"
         />
       </div>
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <selection-table
+          :dark="dark"
+          :dense="dense"
+          :color="color"
+          :hide-header="hideHeader"
+          :hide-bottom="hideBottom"
+          :grid="grid"
+          :search="search"
+        />
+      </div>
+
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <multi-selection-table
+          :dark="dark"
+          :dense="dense"
+          :color="color"
+          :hide-header="hideHeader"
+          :hide-bottom="hideBottom"
+          :grid="grid"
+          :search="search"
+        />
+      </div>
     </div>
   </q-page>
 </template>
@@ -53,7 +76,9 @@
 export default {
   name: 'PageTables',
   components: {
-    BasicTable: () => import('components/active/table/BasicTable')
+    BasicTable: () => import('components/active/table/BasicTable'),
+    SelectionTable: () => import('components/active/table/SelectionTable'),
+    MultiSelectionTable: () => import('components/active/table/MultiSelectionTable')
   },
   data () {
     return {
