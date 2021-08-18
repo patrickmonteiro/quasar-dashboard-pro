@@ -121,17 +121,44 @@ const linksData = [
         icon: 'mdi-format-list-checkbox',
         routeName: 'form'
       }
-      // {
-      //   title: 'Video',
-      //   icon: 'mdi-video-outline',
-      //   routeName: 'video'
-      // }
     ]
   },
   {
     title: 'Tables',
-    icon: 'mdi-table',
-    routeName: 'tables'
+    icon: 'mdi-table-large',
+    childrens: [
+      {
+        title: 'Basic',
+        icon: 'mdi-table',
+        routeName: 'basicTable'
+      },
+      {
+        title: 'Single Selection',
+        icon: 'mdi-table-check',
+        routeName: 'selectionTable'
+      },
+      {
+        title: 'Multiple Selection',
+        icon: 'mdi-table-check',
+        routeName: 'multiSelectionTable'
+      },
+      {
+        title: 'Server Data',
+        icon: 'mdi-table-refresh',
+        routeName: 'serverDataTable'
+      }
+    ]
+  },
+  {
+    title: 'Pages',
+    icon: 'mdi-file',
+    childrens: [
+      {
+        title: 'Login',
+        icon: 'mdi-login',
+        routeName: 'login'
+      }
+    ]
   }
 ]
 

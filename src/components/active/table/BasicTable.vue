@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { users } from 'src/utils/list'
 export default {
   name: 'BasicleTable',
   props: {
@@ -95,23 +96,7 @@ export default {
           required: true
         }
       ],
-      rows: [
-        {
-          name: 'Patrick Monteiro',
-          age: 18,
-          country: 'Brazil'
-        },
-        {
-          name: 'Luiz Patel',
-          age: 22,
-          country: 'Indian'
-        },
-        {
-          name: 'Arnold Smith',
-          age: 30,
-          country: 'EUA'
-        }
-      ]
+      rows: users
     }
   }
 }

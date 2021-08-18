@@ -1,6 +1,5 @@
 <template>
   <q-table
-    title="Single Selection"
     :data="rows"
     :columns="columns"
     row-key="name"
@@ -11,9 +10,15 @@
     :hide-bottom="hideBottom"
     :grid="grid"
     :filter="filter"
-    selection="single"
-    :selected.sync="selected"
   >
+    <template v-slot:top>
+        <span class="text-h6">
+          Server Data
+        </span>
+        <q-space />
+        <q-btn class="q-ml-sm" color="primary" icon="mdi-refresh" label="Request" @click="getPosts" />
+    </template>
+
     <template v-slot:top-right v-if="search">
       <q-input dense debounce="300" v-model="filter" placeholder="Search" >
         <template v-slot:append>
@@ -21,20 +26,12 @@
         </template>
       </q-input>
     </template>
-    <template v-slot:bottom-row>
-      <q-tr>
-        <q-td colspan="100%">
-          Selected: {{ JSON.stringify(selected) }}
-        </q-td>
-      </q-tr>
-    </template>
   </q-table>
 </template>
 
 <script>
-import { users } from 'src/utils/list'
 export default {
-  name: 'BasicleTable',
+  name: 'ServerDataTable',
   props: {
     dark: {
       type: Boolean,
@@ -82,31 +79,34 @@ export default {
   data () {
     return {
       filter: '',
-      selected: [],
       columns: [
         {
-          name: 'name',
-          field: 'name',
-          label: 'Name',
+          name: 'id',
+          field: 'id',
+          label: 'Id',
           align: 'left',
           required: true
         },
         {
-          name: 'age',
-          field: 'age',
-          label: 'Age',
-          align: 'left',
-          required: true
-        },
-        {
-          name: 'country',
-          field: 'country',
-          label: 'Country',
+          name: 'title',
+          field: 'title',
+          label: 'Title',
           align: 'left',
           required: true
         }
       ],
-      rows: users
+      rows: []
+    }
+  },
+  methods: {
+    async getPosts () {
+      this.rows = []
+      try {
+        const response = await this.$axios.get('https://jsonplaceholder.typicode.com/posts')
+        this.rows = response.data
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 }
