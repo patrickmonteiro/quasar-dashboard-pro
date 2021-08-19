@@ -159,6 +159,11 @@ const linksData = [
         routeName: 'login'
       }
     ]
+  },
+  {
+    title: 'Chat',
+    icon: 'mdi-forum',
+    routeName: 'chat'
   }
 ]
 

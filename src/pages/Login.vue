@@ -3,7 +3,6 @@
     <transition name="fade">
       <div class="col-xs-12 col-sm-6 flex container-logo bg-grey-3">
         <q-icon
-          v-if="login"
           name="mdi-arrow-left"
           class="q-ma-lg absolute-full cursor-pointer"
           size="21px"
@@ -19,22 +18,20 @@
         </div>
       </div>
     </transition>
-    <div class="column q-gutter-y-md q-pa-md self-center q-mx-auto">
+    <div class="column q-gutter-y-xs q-pa-lg self-center q-mx-auto">
       <div
-        class="text-center"
-        :class="
-          $q.screen.gt.sm
-            ? 'text-h5 text-weight-bold'
-            : 'text-h6 text-weight-bold'
-        "
+        class="text-center text-weight-bold"
+        :class="$q.screen.gt.sm ? 'text-h5' : 'text-body1'"
       >
         ACCESS MY ACCOUNT
       </div>
-      <q-input required filled bottom-slots v-model="email" label="Email">
+
+      <q-input filled bottom-slots v-model="email" label="Email">
         <template v-slot:prepend>
           <q-icon name="email" />
         </template>
       </q-input>
+
       <q-input filled bottom-slots v-model="password" label="Password">
         <template v-slot:prepend>
           <q-icon name="lock" />
@@ -46,7 +43,7 @@
         rounded
         color="positive"
         size="lg"
-        label="Continuar"
+        label="Log in"
         :loading="loading1"
         @click="simulateProgress(1)"
       >
@@ -55,14 +52,15 @@
         </template>
       </q-btn>
 
-      <div class="divider q-mb-sm"></div>
+      <q-separator class="q-my-sm" />
+      <!-- <div class="divider"></div> -->
       <div class="row">
         <div class="col-12">
-          <div class="row justify-center q-gutter-lg">
+          <div class="row justify-center q-gutter-x-md">
             <div class="col-5">
               <q-btn
                 class="float-right "
-                size="18.7px"
+                size="12px"
                 round
                 color="blue-10"
                 icon="mdi-facebook"
@@ -71,23 +69,15 @@
             <div class="col-5">
               <q-btn
                 class=""
-                size="18.7px"
+                size="12px"
                 round
                 color="red-8"
                 icon="mdi-google"
               />
             </div>
-            <div class="col-12">
-              <div
-                class="text-weight-bold text-uppercase text-center cursor-pointer q-pb-md"
-              >
-                Ainda não sou cliente
-              </div>
-              <div
-                class="text-weight-bold text-uppercase text-center cursor-pointer"
-              >
-                Esqueci minha senha
-              </div>
+            <div class="col-12 text-center q-gutter-y-sm q-pt-md">
+              <q-btn class="btn-fixed-width" flat rounded size="sm" label="Register" />
+              <q-btn class="btn-fixed-width" flat rounded size="sm" label="Remember password" />
             </div>
           </div>
         </div>
@@ -102,21 +92,17 @@ export default {
       loading1: false,
       email: '',
       password: '',
-      login: false,
       fade: true
     }
   },
   methods: {
     simulateProgress (number) {
       this.fade = false
-      this[`loading${number}`] = true
+      this.loading1 = true
       setTimeout(() => {
-        this[`loading${number}`] = false
-        if (this.login === true) {
-          this.$router.push({ name: 'home' })
-        }
-        this.login = true
+        this.loading1 = false
         this.fade = true
+        this.$router.push({ name: 'home' })
       }, 1000)
     }
   }
@@ -140,11 +126,15 @@ div.container-logo {
     width: 100% !important;
   }
 }
-#btn-login {
+
+.btn-fixed-width {
+  width: 200px
+}
+/* #btn-login {
   font-size: 16px !important ;
   font-weight: bold;
   height: 70px;
-}
+} */
 .divider {
   border-top: 1px solid #ebecf3;
 }

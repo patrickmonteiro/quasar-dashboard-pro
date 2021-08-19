@@ -13,7 +13,8 @@ const routes = [
       { path: 'basicTable', name: 'basicTable', component: () => import('src/pages/tables/BasicTable.vue') },
       { path: 'selectionTable', name: 'selectionTable', component: () => import('src/pages/tables/SelectionTable.vue') },
       { path: 'multiSelectionTable', name: 'multiSelectionTable', component: () => import('src/pages/tables/MultiSelectionTable.vue') },
-      { path: 'serverDataTable', name: 'serverDataTable', component: () => import('src/pages/tables/ServerDataTable.vue') }
+      { path: 'serverDataTable', name: 'serverDataTable', component: () => import('src/pages/tables/ServerDataTable.vue') },
+      { path: 'chat', name: 'chat', component: () => import('src/pages/Chat.vue') }
     ]
   },
   {

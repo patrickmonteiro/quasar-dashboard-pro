@@ -36,6 +36,25 @@ const users = [
   }
 ]
 
+const chat = [
+  {
+    name: 'Mary Jane',
+    type: 'send',
+    text: ['Hi']
+  },
+  {
+    name: 'Arnold Smith',
+    type: 'received',
+    text: ['Hi, how are you ?']
+  },
+  {
+    name: 'Mary Jane',
+    type: 'send',
+    text: ['Im fine!']
+  }
+]
+
 export {
-  users
+  users,
+  chat
 }
