@@ -54,7 +54,7 @@
           header
           class="text-white"
         >
-          Essential Links
+          Menu
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -101,12 +101,17 @@ const linksData = [
     icon: 'mdi-play-circle-outline',
     childrens: [
       {
-        title: 'Audio',
+        title: 'Audio Record',
+        icon: 'mdi-microphone',
+        routeName: 'audioRecord'
+      },
+      {
+        title: 'Audio Player',
         icon: 'mdi-volume-high',
         routeName: 'audio'
       },
       {
-        title: 'Video',
+        title: 'Video Player',
         icon: 'mdi-video-outline',
         routeName: 'video'
       }
