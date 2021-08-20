@@ -14,7 +14,9 @@ const routes = [
       { path: 'selectionTable', name: 'selectionTable', component: () => import('src/pages/tables/SelectionTable.vue') },
       { path: 'multiSelectionTable', name: 'multiSelectionTable', component: () => import('src/pages/tables/MultiSelectionTable.vue') },
       { path: 'serverDataTable', name: 'serverDataTable', component: () => import('src/pages/tables/ServerDataTable.vue') },
-      { path: 'chat', name: 'chat', component: () => import('src/pages/Chat.vue') }
+      { path: 'chat', name: 'chat', component: () => import('src/pages/Chat.vue') },
+      { path: 'qrcodeReader', name: 'qrcodeReader', component: () => import('src/pages/Qrcode.vue') },
+      { path: 'qrcodeGenarator', name: 'qrcodeGenarator', component: () => import('src/pages/QrcodeGenarator.vue') }
     ]
   },
   {

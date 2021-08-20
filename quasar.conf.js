@@ -24,7 +24,8 @@ module.exports = function (/* ctx */) {
       'axios',
       'notify',
       'leaflet',
-      'apexcharts'
+      'apexcharts',
+      'qriously'
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css

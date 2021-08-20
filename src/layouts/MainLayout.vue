@@ -162,8 +162,30 @@ const linksData = [
   },
   {
     title: 'Chat',
-    icon: 'mdi-forum',
-    routeName: 'chat'
+    icon: 'mdi-chat',
+    childrens: [
+      {
+        title: 'Basic Chat',
+        icon: 'mdi-forum',
+        routeName: 'chat'
+      }
+    ]
+  },
+  {
+    title: 'QRCode',
+    icon: 'mdi-qrcode',
+    childrens: [
+      {
+        title: 'QRCode Reader',
+        icon: 'mdi-qrcode-scan',
+        routeName: 'qrcodeReader'
+      },
+      {
+        title: 'QRCode Genarator',
+        icon: 'mdi-qrcode-edit',
+        routeName: 'qrcodeGenarator'
+      }
+    ]
   }
 ]
 

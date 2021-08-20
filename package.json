@@ -18,6 +18,8 @@
     "quasar": "^1.0.0",
     "vue-apexcharts": "^1.6.2",
     "vue-i18n": "^8.0.0",
+    "vue-qrcode-reader": "^3.0.3",
+    "vue-qriously": "^1.1.1",
     "vue2-leaflet": "^2.7.1"
   },
   "devDependencies": {
