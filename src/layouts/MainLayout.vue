@@ -151,6 +151,11 @@ const linksData = [
         title: 'Server Data',
         icon: 'mdi-table-refresh',
         routeName: 'serverDataTable'
+      },
+      {
+        title: 'Editable',
+        icon: 'mdi-table-edit',
+        routeName: 'editTable'
       }
     ]
   },

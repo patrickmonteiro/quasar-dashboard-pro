@@ -12,6 +12,7 @@ const routes = [
       { path: 'video', name: 'video', component: () => import('src/pages/Video.vue') },
       { path: 'form', name: 'form', component: () => import('src/pages/Form.vue') },
       { path: 'basicTable', name: 'basicTable', component: () => import('src/pages/tables/BasicTable.vue') },
+      { path: 'editTable', name: 'editTable', component: () => import('src/pages/tables/EditTable.vue') },
       { path: 'selectionTable', name: 'selectionTable', component: () => import('src/pages/tables/SelectionTable.vue') },
       { path: 'multiSelectionTable', name: 'multiSelectionTable', component: () => import('src/pages/tables/MultiSelectionTable.vue') },
       { path: 'serverDataTable', name: 'serverDataTable', component: () => import('src/pages/tables/ServerDataTable.vue') },
