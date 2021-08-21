@@ -14,7 +14,7 @@
 export default {
   name: 'CardLineChart',
   components: {
-    ApexLineSmall: () => import('components/active/apexcharts/LineSmall')
+    ApexLineSmall: () => import('components/active/apexcharts/Area')
   }
 }
 </script>
