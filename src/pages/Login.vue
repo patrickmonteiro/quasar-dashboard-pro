@@ -102,7 +102,7 @@ export default {
       setTimeout(() => {
         this.loading1 = false
         this.fade = true
-        this.$router.push({ name: 'home' })
+        this.$router.push({ name: 'dashboard' })
       }, 1000)
     }
   }

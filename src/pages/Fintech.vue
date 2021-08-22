@@ -1,28 +1,25 @@
 <template>
   <q-page class="bg-secondary" padding>
     <cards-fintech />
-    <!-- <div class="row q-pt-md q-col-gutter-lg">
-      <card-map />
-      <div class="col-md-4 col-sm-12 col-xs-12">
-        <card-line-chart />
+    <div class="row q-pt-md q-px-sm q-col-gutter-lg">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <traffic-table />
       </div>
-    </div> -->
-    <!-- <card-circular-progress-list/> -->
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <card-list />
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script>
 import CardsFintech from 'components/active/cards/CardsFintech'
-// import CardMap from 'components/cards/CardMap'
-// import CardLineChart from 'components/cards/CardLineChart'
-// import CardCircularProgressList from 'components/cards/CardCircularProgressList'
 export default {
   name: 'PageFintech',
   components: {
-    CardsFintech
-    // CardMap,
-    // CardLineChart,
-    // CardCircularProgressList
+    CardsFintech,
+    TrafficTable: () => import('components/active/table/TrafficTable'),
+    CardList: () => import('components/cards/CardList')
   },
   data () {
     return {

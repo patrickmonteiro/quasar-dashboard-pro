@@ -178,6 +178,11 @@ const linksData = [
         title: 'Login',
         icon: 'mdi-login',
         routeName: 'login'
+      },
+      {
+        title: 'Pricing',
+        icon: 'mdi-currency-usd',
+        routeName: 'pricing'
       }
     ]
   },
@@ -215,6 +220,8 @@ export default {
   components: {
     EssentialLink,
     ButtonDropdown: () => import('components/button/ButtonDropdown')
+  },
+  mounted () {
   },
   data () {
     return {

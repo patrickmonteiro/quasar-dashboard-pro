@@ -54,7 +54,46 @@ const chat = [
   }
 ]
 
+const traffic = [
+  {
+    channel: 'Facebook',
+    sessions: '9121',
+    rate: '9090',
+    percentage: 0.5,
+    color: 'blue-7'
+  },
+  {
+    channel: 'Email',
+    sessions: '1933',
+    rate: '938',
+    percentage: 0.9,
+    color: 'grey-7'
+  },
+  {
+    channel: 'Instagram',
+    sessions: '1400',
+    rate: '282',
+    percentage: 0.7,
+    color: 'red-6'
+  },
+  {
+    channel: 'SMS',
+    sessions: '300',
+    rate: '272',
+    percentage: 0.4,
+    color: 'green-6'
+  },
+  {
+    channel: 'Site',
+    sessions: '110',
+    rate: '28',
+    percentage: 0.3,
+    color: 'purple-6'
+  }
+]
+
 export {
   users,
-  chat
+  chat,
+  traffic
 }
