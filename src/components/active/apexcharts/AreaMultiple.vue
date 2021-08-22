@@ -10,15 +10,21 @@
 import { colors } from 'quasar'
 const { getBrand } = colors
 export default {
-  name: 'ApexLine',
+  name: 'ApexAreaMultiple',
   data () {
     return {
-      series: [{
-        name: 'Area',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
-      }],
+      series: [
+        {
+          name: 'Area',
+          data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
+        },
+        {
+          name: 'Area 2',
+          data: [24, 40, 60, 60, 38, 28, 28, 38, 10]
+        }
+      ],
       chartOptions: {
-        colors: [getBrand('positive'), getBrand('secondary'), getBrand('warning')],
+        colors: [getBrand('positive'), getBrand('negative'), getBrand('warning')],
         animations: {
           enabled: true,
           easing: 'easeinout',
@@ -51,7 +57,7 @@ export default {
           enabled: false
         },
         title: {
-          text: 'Area',
+          text: 'Area Multiple',
           align: 'left',
           style: {
             color: '#111'

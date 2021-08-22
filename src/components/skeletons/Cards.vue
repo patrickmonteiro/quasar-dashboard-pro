@@ -1,7 +1,7 @@
 <template>
 <div class="row q-col-gutter-lg">
   <div
-    class="col-md-3 col-sm-12 col-xs-12"
+    :class="customClass"
     v-for="card in showNumber"
     :key="card"
   >
@@ -18,7 +18,7 @@
         </q-item-section>
       </q-item>
 
-      <q-skeleton height="50px" square />
+      <q-skeleton :height="height" square />
 
       <q-card-actions align="left" class="q-gutter-md">
         <q-skeleton type="QBtn" />
@@ -36,6 +36,16 @@ export default {
       type: Number,
       required: false,
       default: 4
+    },
+    customClass: {
+      type: String,
+      require: false,
+      default: 'col-md-3 col-sm-12 col-xs-12'
+    },
+    height: {
+      type: String,
+      require: false,
+      default: '50px'
     }
   }
 }

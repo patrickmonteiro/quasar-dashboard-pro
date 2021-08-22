@@ -75,9 +75,20 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Home',
-    icon: 'mdi-home',
-    routeName: 'home'
+    title: 'Dashboards',
+    icon: 'mdi-view-dashboard',
+    childrens: [
+      {
+        title: 'Basic',
+        icon: 'mdi-view-dashboard-outline',
+        routeName: 'dashboard'
+      },
+      {
+        title: 'Fintech',
+        icon: 'mdi-finance',
+        routeName: 'fintech'
+      }
+    ]
   },
   {
     title: 'Maps',
