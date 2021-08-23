@@ -183,6 +183,11 @@ const linksData = [
         title: 'Pricing',
         icon: 'mdi-currency-usd',
         routeName: 'pricing'
+      },
+      {
+        title: 'FAQs',
+        icon: 'mdi-help-circle-outline',
+        routeName: 'faqs'
       }
     ]
   },

@@ -7,6 +7,7 @@ const routes = [
       { path: '', name: 'dashboard', component: () => import('src/pages/Dashboard.vue') },
       { path: 'fintech', name: 'fintech', component: () => import('src/pages/Fintech.vue') },
       { path: 'pricing', name: 'pricing', component: () => import('src/pages/Pricing.vue') },
+      { path: 'faqs', name: 'faqs', component: () => import('src/pages/Faqs.vue') },
       { path: 'map', name: 'map', component: () => import('src/pages/Map.vue') },
       { path: 'charts', name: 'charts', component: () => import('src/pages/Charts.vue') },
       { path: 'audioRecord', name: 'audioRecord', component: () => import('src/pages/AudioRecord.vue') },
