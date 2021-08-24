@@ -54,6 +54,25 @@ const chat = [
   }
 ]
 
+const faqs = [
+  {
+    title: 'How long does it take to download updates?',
+    response: 'Many support queries and technical questions will already be answered in supporting documentation such as FAQ’s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  },
+  {
+    title: 'Where to buy this UI dashboard?',
+    response: 'Many support queries and technical questions will already be answered in supporting documentation such as FAQ’s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  },
+  {
+    title: 'How long does it take to download updates?',
+    response: 'Many support queries and technical questions will already be answered in supporting documentation such as FAQ’s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  },
+  {
+    title: 'How long does it take to download updates?',
+    response: 'Many support queries and technical questions will already be answered in supporting documentation such as FAQ’s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  }
+]
+
 const traffic = [
   {
     channel: 'Facebook',
@@ -95,5 +114,6 @@ const traffic = [
 export {
   users,
   chat,
-  traffic
+  traffic,
+  faqs
 }
