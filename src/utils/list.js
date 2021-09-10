@@ -111,9 +111,41 @@ const traffic = [
   }
 ]
 
+const youtube = [
+  {
+    url: 'https://www.youtube.com/embed/XFVXoC2wt1U',
+    title: 'Quasar Framework 01 - Introdução'
+  },
+  {
+    url: 'https://www.youtube.com/embed/nTR45CgG_vQ',
+    title: 'Quasar Framework 02 - Instalação'
+  },
+  {
+    url: 'https://www.youtube.com/embed/xUupSPsbbB4',
+    title: 'Quasar Framework 03 - Quasar CLI (parte 1)'
+  },
+  {
+    url: 'https://www.youtube.com/embed/q6_s-SWiyyI',
+    title: 'Quasar Framework 03.1 - Quasar CLI (parte 2)'
+  },
+  {
+    url: 'https://www.youtube.com/embed/sPEnrWdNeew',
+    title: 'Quasar Framework 04 - Layout Builder)'
+  },
+  {
+    url: 'https://www.youtube.com/embed/rjwg0udSV1E',
+    title: 'Quasar Framework 05 - Atualizando para versão 2.x (@quasar/app)'
+  },
+  {
+    url: 'https://www.youtube.com/embed/wl0x90NPFJs',
+    title: 'Quasar Framework 06 - Formulários com validações (Parte 1)'
+  }
+]
+
 export {
   users,
   chat,
   traffic,
-  faqs
+  faqs,
+  youtube
 }

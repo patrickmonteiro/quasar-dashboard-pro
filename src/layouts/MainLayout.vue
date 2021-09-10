@@ -28,13 +28,6 @@
             </q-badge>
           </q-btn>
           <button-dropdown />
-          <!-- <q-btn
-            flat
-            dense
-            round
-            icon="mdi-cog-outline"
-            aria-label="Config"
-          /> -->
         </div>
       </q-toolbar>
     </q-header>
@@ -188,6 +181,11 @@ const linksData = [
         title: 'FAQs',
         icon: 'mdi-help-circle-outline',
         routeName: 'faqs'
+      },
+      {
+        title: 'Video Course Platform',
+        icon: 'mdi-message-video',
+        routeName: 'videoCourse'
       }
     ]
   },

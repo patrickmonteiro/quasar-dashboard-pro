@@ -13,6 +13,7 @@ const routes = [
       { path: 'audioRecord', name: 'audioRecord', component: () => import('src/pages/AudioRecord.vue') },
       { path: 'audio', name: 'audio', component: () => import('src/pages/Audio.vue') },
       { path: 'video', name: 'video', component: () => import('src/pages/Video.vue') },
+      { path: 'videoCourse', name: 'videoCourse', component: () => import('src/pages/VideoCourse.vue') },
       { path: 'form', name: 'form', component: () => import('src/pages/Form.vue') },
       { path: 'basicTable', name: 'basicTable', component: () => import('src/pages/tables/BasicTable.vue') },
       { path: 'editTable', name: 'editTable', component: () => import('src/pages/tables/EditTable.vue') },
