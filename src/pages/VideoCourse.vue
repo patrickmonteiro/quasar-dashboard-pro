@@ -23,6 +23,8 @@
               :key="item"
               clickable
               @click="setVideo(item)"
+              :active="item.title === title ? true : false"
+              active-class="text-primary"
             >
               <q-item-section class="text-bold">
                 {{ item.title}}
