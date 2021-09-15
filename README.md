@@ -1,5 +1,6 @@
+# PROIBIDO O COMPARTILHAMENTO DO PROJETO DE FORMA PÚBLICA.
+O PROJETO POSSUI LICENÇA DE USO.
 # Quasar Dashboard PRO (quasar-dashboard-pro)
-
 The pro template based on quasarframework
 
 ## Install the dependencies
