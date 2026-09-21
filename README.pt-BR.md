@@ -21,10 +21,10 @@ Uma UI polida e pronta para negócios, que você pode usar direto em um produto 
 
 ## Por que este template
 
-A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem relação entre si. O Quasar Dashboard PRO é organizado em **módulos de negócio prontos para uso** — Finance, CRM, E-Commerce, Fleet Tracking — cada um com fluxos reais e conectados (não apenas telas isoladas), para você remover o que não precisa e lançar o resto.
+A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem relação entre si. O Quasar Dashboard PRO é organizado em **módulos de negócio prontos para uso** — Finance, CRM, E-Commerce, Fleet Tracking, Support — cada um com fluxos reais e conectados (não apenas telas isoladas), para você remover o que não precisa e lançar o resto.
 
-- **Módulos de negócio, não telas soltas** — Finance, CRM, E-Commerce e Fleet Tracking, cada um em uma pasta autocontida e fácil de copiar.
-- **Fluxos de UI reais** — um funil de checkout completo, um kanban com drag de negociações, uma caixa de entrada com painel de leitura, um mapa ao vivo com rastreamento animado de veículos — não apenas tabelas estáticas.
+- **Módulos de negócio, não telas soltas** — Finance, CRM, E-Commerce, Fleet Tracking e Support, cada um em uma pasta autocontida e fácil de copiar.
+- **Fluxos de UI reais** — um funil de checkout completo, um kanban com drag de negociações, uma caixa de entrada com painel de leitura, um mapa ao vivo com rastreamento animado de veículos, uma caixa de chat ao vivo com roteamento de conversas — não apenas tabelas estáticas.
 - **Páginas utilitárias comuns incluídas** — exemplo de CRUD, fatura, FAQ, formulário de contato — para você não precisar construir do zero as páginas "chatas mas necessárias".
 - **Stack moderna, feita certo** — Vue 3 `<script setup>`, Quasar 2, TypeScript em tudo, Pinia, Vite. Sem Options API, sem resquícios de JavaScript puro.
 - **Um design system, não só componentes** — uma cor de destaque, um raio de borda, um padrão de diálogo de detalhes, aplicados de forma consistente em todos os módulos.
@@ -37,7 +37,7 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 - O dashboard fica aberto por padrão — sem login obrigatório. Um fluxo de autenticação de demonstração (sessão persistida, proteção de rotas) está incluído e é fácil de reativar, em `/login`
 - Gráficos (ApexCharts) ajustados para ficarem corretos tanto no modo claro quanto no escuro
 - Um padrão compartilhado de `RecordDetailDialog`, para que toda lista/tabela do app abra detalhes da mesma forma
-- Diagramas animados com Vue Flow espalhados pelos módulos, cada um com uma aparência própria — um pipeline de observabilidade em tempo real, um diagrama ramificado de fluxo de dinheiro, um funil de conversão afunilando, um rastreador de status de entrega — além de um efeito de "radar" pulsante nos marcadores do mapa ao vivo
+- Diagramas animados com Vue Flow espalhados pelos módulos, cada um com uma aparência própria — um pipeline de observabilidade em tempo real, um diagrama ramificado de fluxo de dinheiro, um funil de conversão afunilando, um rastreador de status de entrega, um diagrama radial de roteamento de conversas — além de um efeito de "radar" pulsante nos marcadores do mapa ao vivo
 - Um calendário no estilo Google Calendar (visões Day/Week, criação de evento por clique, cores por evento), feito com [QCalendar](https://qcalendar.netlify.app)
 - Mapa com Leaflet, marcadores customizados e zonas de risco geolocalizadas — sem necessidade de chave de API
 - Um exemplo genérico de CRUD (busca, diálogo de criar/editar, exclusão em lote com confirmação) para copiar e usar nas suas próprias entidades
@@ -51,6 +51,7 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 | **CRM**            | `/crm/*`       | Overview (gráfico de pipeline por estágio, estatísticas de leads, próximas atividades), Leads (tabela completa), Deals (kanban por estágio, gráfico de valor de pipeline por owner), Mail (caixa de entrada com pastas, painel de leitura e composição), Calendar (agenda Day/Week no estilo Google Calendar)                               |
 | **E-Commerce**     | `/ecommerce/*` | Fluxo completo de produto até pedido: Products (grid com busca/filtro/ordenação) → detalhe do produto (galeria, quantidade, wishlist, produtos relacionados) → Shopping Cart → Checkout (stepper de envio/pagamento/revisão) → recibo de Order Summary, além de Order History com stepper de status de entrega                              |
 | **Fleet Tracking** | `/fleet/*`     | Live Map (marcadores animados de veículos, zonas de risco geolocalizadas, pipeline de observabilidade animado), Vehicles (tabela de status/combustível/motorista), Trip History (replay de rota com linha do tempo de paradas), Alerts & Maintenance (feed de alertas filtrável por severidade)                                             |
+| **Support**        | `/support/*`   | Overview (estatísticas de conversas/CSAT, diagrama animado radial de roteamento de conversas, gráfico de tickets por canal), Inbox (chat ao vivo com lista de conversas, balões de mensagem e campo de resposta), Tickets (tabela completa de tickets de suporte)                                                                           |
 | **Pages**          | `/pages/*`     | Páginas utilitárias comuns: Auth (link para a tela de login de demonstração em `/login`), Crud (tabela pesquisável com diálogo de criar/editar e exclusão em lote), Invoice (documento de fatura imprimível), FAQ (acordeão pesquisável e categorizado), Contact Us (formulário + informações de contato), Empty (template de estado vazio) |
 
 Além do "núcleo" compartilhado: autenticação (login de demonstração, proteção de rotas, sessão persistida), a estrutura do dashboard e as stores Pinia.
