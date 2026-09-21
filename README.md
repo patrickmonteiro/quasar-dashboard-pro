@@ -111,6 +111,15 @@ pnpm build
 
 Configuration lives in [`quasar.config.ts`](./quasar.config.ts) — see the [Quasar CLI docs](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file).
 
+### Deploying (Netlify)
+
+The router runs in [history mode](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework-vuerouter-mode) (no `#` in URLs), so a hard refresh on a deep link like `/fleet/vehicles` needs the host to fall back to `index.html` instead of 404ing. This repo already ships that config for Netlify:
+
+- [`netlify.toml`](./netlify.toml) — build command, publish directory (`dist/spa`) and the SPA redirect rule, used when you connect the repo directly to Netlify
+- [`public/_redirects`](./public/_redirects) — the same fallback rule, copied into the build output, used if you instead drag-and-drop `dist/spa` or deploy it from another CI
+
+Deploying to another static host (Vercel, Cloudflare Pages, S3, etc.)? Look for the equivalent "SPA fallback" / rewrite-all-to-`index.html` setting.
+
 ## AI-assisted development (MCP)
 
 This repo ships a [Quasar MCP server](https://quasar.dev/start/ai-agents#setup) configuration for AI coding agents (Claude Code, VS Code, etc.) at [`.mcp.json`](./.mcp.json) / [`.vscode/mcp.json`](./.vscode/mcp.json). It gives the agent offline access to the exact Quasar docs and component APIs matching the versions installed in `node_modules` — no extra setup needed, it's picked up automatically once you open the project.

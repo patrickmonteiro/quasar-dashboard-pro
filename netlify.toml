@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm build"
+  publish = "dist/spa"
+
+# Vue Router runs in history mode (no #hash), so every deep-linked route
+# (e.g. /fleet/vehicles) must fall back to index.html — otherwise Netlify
+# returns a 404 on a hard refresh instead of letting the SPA router handle it.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
