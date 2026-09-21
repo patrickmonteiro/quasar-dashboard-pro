@@ -13,6 +13,9 @@ import { navSection as ecommerceNav } from './ecommerce/nav';
 import { routes as fleetRoutes } from './fleet/routes';
 import { navSection as fleetNav } from './fleet/nav';
 
+import { routes as supportRoutes } from './support/routes';
+import { navSection as supportNav } from './support/nav';
+
 import { routes as pagesRoutes } from './pages/routes';
 import { navSection as pagesNav } from './pages/nav';
 
@@ -29,6 +32,7 @@ export const moduleRoutes: RouteRecordRaw[] = [
   ...crmRoutes,
   ...ecommerceRoutes,
   ...fleetRoutes,
+  ...supportRoutes,
   ...pagesRoutes,
 ];
 
@@ -37,5 +41,6 @@ export const moduleNavSections: NavSection[] = [
   crmNav,
   ecommerceNav,
   fleetNav,
+  supportNav,
   pagesNav,
 ];
