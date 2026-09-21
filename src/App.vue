@@ -1,10 +1,14 @@
 <template>
-  <div id="q-app">
-    <router-view />
-  </div>
+  <router-view />
 </template>
-<script>
-export default {
-  name: 'App'
-}
+
+<script setup lang="ts">
+import { onMounted } from 'vue';
+import { useUiStore } from '@/stores/ui-store';
+
+const uiStore = useUiStore();
+
+onMounted(() => {
+  uiStore.applyDarkPreference();
+});
 </script>

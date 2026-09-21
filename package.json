@@ -1,54 +1,75 @@
 {
   "name": "quasar-dashboard-pro",
-  "version": "0.0.1",
-  "description": "The pro template based on quasarframework",
+  "version": "0.1.0",
+  "description": "Open source, modern admin dashboard template built with Vue 3, Quasar 2 and TypeScript.",
   "productName": "Quasar Dashboard PRO",
   "author": "Patrick Monteiro <eng.patrickmonteiro@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickmonteiro/quasar-dashboard-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/patrickmonteiro/quasar-dashboard-pro/issues"
+  },
+  "homepage": "https://github.com/patrickmonteiro/quasar-dashboard-pro#readme",
+  "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "lint": "prettier --write \"**/*.{js,ts,vue,css,scss,html,md,json}\" --ignore-path .gitignore && eslint --fix -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
+    "lint:check": "prettier \"**/*.{js,ts,vue,css,scss,html,md,json}\" --ignore-path .gitignore && eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "typecheck": "vue-tsc --noEmit",
+    "postinstall": "quasar prepare --silent"
   },
   "dependencies": {
-    "@quasar/extras": "^1.10.10",
-    "apexcharts": "^3.27.3",
-    "axios": "^0.21.1",
-    "core-js": "^3.6.5",
-    "leaflet": "^1.7.1",
-    "quasar": "^1.0.0",
-    "vue-apexcharts": "^1.6.2",
-    "vue-i18n": "^8.0.0",
-    "vue-qrcode-reader": "^3.0.3",
-    "vue-qriously": "^1.1.1",
-    "vue2-leaflet": "^2.7.1"
+    "@fontsource-variable/inter": "^5.3.0",
+    "@quasar/extras": "^2.1.0",
+    "@vue-flow/core": "^1.48.2",
+    "@vue-leaflet/vue-leaflet": "^0.10.1",
+    "apexcharts": "^7.5.0",
+    "leaflet": "^1.9.4",
+    "pinia": "^4.0.2",
+    "quasar": "^2.33.0",
+    "vue": "^3.5.22",
+    "vue-router": "^5.0.6",
+    "vue3-apexcharts": "^1.11.1"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0",
-    "@quasar/quasar-app-extension-qmediaplayer": "^1.4.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^7.21.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-vue": "^7.7.0",
-    "eslint-webpack-plugin": "^2.4.0",
-    "workbox-webpack-plugin": "^5.0.0"
+    "@eslint/js": "^10.0.1",
+    "@quasar/app-vite": "^3.9.0",
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^22.19.11",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.7.0",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^10.8.0",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.4.0",
+    "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
+    "typescript": "^6.0.0",
+    "vite-plugin-checker": "^0.14.5",
+    "vue-eslint-parser": "^10.4.0",
+    "vue-tsc": "^3.3.3"
   },
-  "browserslist": [
-    "last 10 Chrome versions",
-    "last 10 Firefox versions",
-    "last 4 Edge versions",
-    "last 7 Safari versions",
-    "last 8 Android versions",
-    "last 8 ChromeAndroid versions",
-    "last 8 FirefoxAndroid versions",
-    "last 10 iOS versions",
-    "last 5 Opera versions"
+  "keywords": [
+    "quasar",
+    "quasar-app",
+    "quasar-cli",
+    "quasar-app-vite",
+    "vite",
+    "vue",
+    "vuejs",
+    "vue3",
+    "admin-dashboard",
+    "dashboard-template",
+    "typescript",
+    "pinia",
+    "open-source"
   ],
   "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "node": ">= 26 || ^24 || ^22.12"
   }
 }

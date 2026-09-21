@@ -2,9 +2,13 @@
 .thumbs.db
 node_modules
 
+# .env files
+.env*
+
 # Quasar core related directories
 .quasar
 /dist
+/quasar.config.*.temporary.compiled*
 
 # Cordova related directories and files
 /src-cordova/node_modules
@@ -16,18 +20,7 @@ node_modules
 /src-capacitor/www
 /src-capacitor/node_modules
 
-# BEX related directories and files
-/src-bex/www
-/src-bex/js/core
-
 # Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln

@@ -1,0 +1,49 @@
+// Quasar Sass (& SCSS) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+$primary: #4f46e5;
+$secondary: #64748b;
+$accent: #14b8a6;
+
+$dark: #18181b;
+$dark-page: #101012;
+
+// Fixed-dark sidebar, independent from the light/dark content toggle
+// (used by MainLayout's QDrawer) — the "enterprise chrome" look.
+$sidebar-bg: #18181b;
+
+$positive: #22c55e;
+$negative: #ef4444;
+$info: #3b82f6;
+$warning: #f59e0b;
+
+// Softer, more "enterprise refined" look: rounder corners, lighter
+// hairline borders, thinner default separators.
+$generic-border-radius: 12px;
+$separator-color: rgba(0, 0, 0, 0.08);
+$separator-dark-color: rgba(255, 255, 255, 0.08);
+
+// QBtn doesn't inherit $generic-border-radius (default is a near-square
+// 3px) — match it to the cards/charts radius so buttons feel consistent.
+$button-border-radius: 12px;
+
+// Inter (self-hosted via @fontsource-variable/inter, imported in app.scss)
+// — the same family used by the Diamond reference design.
+$typography-font-family:
+  'Inter Variable',
+  -apple-system,
+  'Helvetica Neue',
+  Helvetica,
+  Arial,
+  sans-serif;

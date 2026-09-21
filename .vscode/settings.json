@@ -1,7 +1,14 @@
 {
-  "vetur.validation.template": false,
-  "vetur.format.enable": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  
-  "vetur.experimental.templateInterpolationService": true
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "search.exclude": {
+    "dist/": true,
+    ".quasar/": true,
+    "/quasar.config.js.temporary.*": true
+  }
 }

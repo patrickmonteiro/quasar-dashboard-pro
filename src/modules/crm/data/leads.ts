@@ -1,0 +1,78 @@
+import type { Lead } from '../components/LeadsTable.vue';
+
+// Placeholder data — wire this up to a real API when available.
+export const leads: Lead[] = [
+  {
+    id: '1',
+    name: 'Marina Costa',
+    company: 'Acme Co.',
+    stage: 'Negotiation',
+    value: '$24,000',
+    owner: 'You',
+  },
+  {
+    id: '2',
+    name: 'John Pierce',
+    company: 'Nimbus Ltd.',
+    stage: 'Proposal',
+    value: '$12,500',
+    owner: 'You',
+  },
+  {
+    id: '3',
+    name: 'Ana Ferreira',
+    company: 'Bluewave',
+    stage: 'Qualified',
+    value: '$6,800',
+    owner: 'Sara',
+  },
+  {
+    id: '4',
+    name: 'Diego Alvez',
+    company: 'Orbital Inc.',
+    stage: 'Won',
+    value: '$31,200',
+    owner: 'Sara',
+  },
+  { id: '5', name: 'Li Wei', company: 'Harborlight', stage: 'Lead', value: '$4,300', owner: 'You' },
+  {
+    id: '6',
+    name: 'Priya Nair',
+    company: 'Solace Health',
+    stage: 'Qualified',
+    value: '$9,100',
+    owner: 'Sara',
+  },
+  {
+    id: '7',
+    name: 'Tom Becker',
+    company: 'Northwind',
+    stage: 'Proposal',
+    value: '$15,750',
+    owner: 'You',
+  },
+  {
+    id: '8',
+    name: 'Elena Petrova',
+    company: 'Vertex Labs',
+    stage: 'Lead',
+    value: '$3,200',
+    owner: 'Sara',
+  },
+  {
+    id: '9',
+    name: 'Carlos Mendes',
+    company: 'Riverstone',
+    stage: 'Won',
+    value: '$22,400',
+    owner: 'You',
+  },
+  {
+    id: '10',
+    name: 'Yuki Tanaka',
+    company: 'Sakura Retail',
+    stage: 'Negotiation',
+    value: '$18,900',
+    owner: 'Sara',
+  },
+];
