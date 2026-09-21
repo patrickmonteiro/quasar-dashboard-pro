@@ -43,6 +43,21 @@
       </div>
     </div>
 
+    <q-card flat bordered class="q-mb-md">
+      <q-card-section>
+        <div class="text-subtitle1 text-weight-medium">Pipeline value by stage</div>
+        <div class="text-caption text-grey-5">Deal value per stage, split by owner</div>
+      </q-card-section>
+      <q-card-section>
+        <apexchart
+          type="bar"
+          height="260"
+          :options="valueByOwnerChart.options"
+          :series="valueByOwnerChart.series"
+        />
+      </q-card-section>
+    </q-card>
+
     <div class="row q-col-gutter-md deals-board no-wrap items-stretch">
       <div v-for="stage in stages" :key="stage" class="deal-column-wrap">
         <DealColumn :stage="stage" :leads="leadsByStage[stage] ?? []" @card-click="onDealClick" />
@@ -60,11 +75,14 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { useQuasar } from 'quasar';
 import DealColumn from '../components/DealColumn.vue';
 import { leads } from '../data/leads';
 import type { Lead } from '../components/LeadsTable.vue';
 import { stageColor } from '../stage-color';
 import RecordDetailDialog, { type DetailField } from '@/components/RecordDetailDialog.vue';
+
+const $q = useQuasar();
 
 const stages: Lead['stage'][] = ['Lead', 'Qualified', 'Proposal', 'Negotiation', 'Won'];
 
@@ -89,6 +107,35 @@ const winRate = computed(
 function formatCurrency(value: number) {
   return `$${Math.round(value).toLocaleString('en-US')}`;
 }
+
+const owners = computed(() => Array.from(new Set(leads.map((lead) => lead.owner))));
+const ownerColors = ['#4f46e5', '#f59e0b', '#3b82f6', '#14b8a6'];
+
+const valueByOwnerChart = computed(() => ({
+  options: {
+    chart: {
+      stacked: true,
+      toolbar: { show: false },
+      background: $q.dark.isActive ? '#18181b' : '#ffffff',
+    },
+    plotOptions: { bar: { borderRadius: 6, columnWidth: '45%' } },
+    dataLabels: { enabled: false },
+    theme: { mode: $q.dark.isActive ? 'dark' : 'light' },
+    xaxis: { categories: stages },
+    yaxis: { labels: { formatter: (v: number) => `$${Math.round(v / 1000)}k` } },
+    colors: ownerColors,
+    legend: { position: 'top', horizontalAlign: 'right' },
+    grid: { strokeDashArray: 4, borderColor: $q.dark.isActive ? '#3f3f46' : '#e5e7eb' },
+  },
+  series: owners.value.map((owner) => ({
+    name: owner,
+    data: stages.map((stage) =>
+      leads
+        .filter((lead) => lead.stage === stage && lead.owner === owner)
+        .reduce((sum, lead) => sum + parseValue(lead.value), 0),
+    ),
+  })),
+}));
 
 const detailOpen = ref(false);
 const detailTitle = ref('');

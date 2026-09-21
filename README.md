@@ -1,10 +1,12 @@
 <div align="center">
-  <img src=".github/logo.png" alt="Quasar Dashboard PRO" width="220" />
+  <img src="public/og-image.png" alt="Quasar Dashboard PRO" width="900" />
 
 # Quasar Dashboard PRO
 
 **A free, open source admin dashboard template built with Vue 3, Quasar 2 and TypeScript.**
 Polished, business-ready UI you can drop straight into a real product — not another empty starter kit.
+
+**[🔗 Live demo](https://quasar-dashboard-pro.netlify.app)**
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 ![Vue 3](https://img.shields.io/badge/Vue-3.x-42b883?logo=vuedotjs&logoColor=white)
@@ -23,6 +25,7 @@ Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard 
 
 - **Business modules, not demo pages** — Finance, CRM, E-Commerce and Fleet Tracking, each a self-contained, copy-pasteable folder.
 - **Real UI flows** — a full checkout funnel, a kanban you can drag deals across, an inbox with a reading pane, a live map with animated vehicle tracking — not just static tables.
+- **Common utility pages included** — CRUD example, invoice, FAQ, contact form — so you're not building the boring-but-necessary pages from scratch either.
 - **Modern stack, done right** — Vue 3 `<script setup>`, Quasar 2, TypeScript everywhere, Pinia, Vite. No Options API, no JavaScript-only leftovers.
 - **A design system, not just components** — one accent color, one corner radius, one detail-dialog pattern, applied consistently across every module.
 - **Dark mode** that actually looks finished, not an inverted afterthought.
@@ -31,21 +34,24 @@ Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard 
 ## Features
 
 - Responsive dashboard shell: collapsible grouped sidebar, header with dark-mode toggle, notifications and account menu
-- Demo authentication flow with a persisted session and route guard
+- The dashboard is open by default — no forced login. A demo authentication flow (persisted session, route guard) is included and easy to re-enable, at `/login`
 - Charts (ApexCharts) tuned to look correct in both light and dark mode
 - A shared `RecordDetailDialog` pattern so every list/table in the app opens details the same way
-- An animated, real-time-feeling observability pipeline (built with Vue Flow) and a pulsing "radar" effect on live map markers
+- Animated Vue Flow diagrams across modules, each with its own distinct look — a real-time observability pipeline, a branching money-flow diagram, a narrowing conversion funnel, a fulfillment status tracker — plus a pulsing "radar" effect on live map markers
+- A Google Calendar-style scheduler (Day/Week views, drag-free click-to-create, color-coded events) built with [QCalendar](https://qcalendar.netlify.app)
 - Leaflet-powered map with custom markers and geofenced risk zones — no API key required
+- A generic CRUD example (search, create/edit dialog, bulk delete with confirmation) to copy for your own entities
 - Fully typed end to end, with strict ESLint + Prettier setup
 
 ## Modules included
 
-| Module             | Routes         | What's inside                                                                                                                                                                                                                                                           |
-| ------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Finance**        | `/finance/*`   | Overview (currency cards with sparklines, income/expenditure chart, budget breakdown, credit score gauge), Transactions (full history table), Accounts                                                                                                                  |
-| **CRM**            | `/crm/*`       | Overview (pipeline-by-stage chart, lead stats, upcoming activities), Leads (full table), Deals (kanban board by stage), Mail (inbox with folders, reading pane and compose)                                                                                             |
-| **E-Commerce**     | `/ecommerce/*` | Full product-to-order flow: Products (search/filter/sort grid) → product detail (gallery, quantity, wishlist, related products) → Shopping Cart → Checkout (shipping/payment/review stepper) → Order Summary receipt, plus Order History with a delivery-status stepper |
-| **Fleet Tracking** | `/fleet/*`     | Live Map (animated vehicle markers, geofenced risk zones, animated observability pipeline), Vehicles (status/fuel/driver table), Trip History (route replay with stop timeline), Alerts & Maintenance (severity-filtered alert feed)                                    |
+| Module             | Routes         | What's inside                                                                                                                                                                                                                                                                        |
+| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Finance**        | `/finance/*`   | Overview (currency cards with sparklines, income/expenditure chart, budget breakdown, credit score gauge), Transactions (full history table), Accounts                                                                                                                               |
+| **CRM**            | `/crm/*`       | Overview (pipeline-by-stage chart, lead stats, upcoming activities), Leads (full table), Deals (kanban board by stage, pipeline-value chart by owner), Mail (inbox with folders, reading pane and compose), Calendar (Google Calendar-style Day/Week scheduler)                      |
+| **E-Commerce**     | `/ecommerce/*` | Full product-to-order flow: Products (search/filter/sort grid) → product detail (gallery, quantity, wishlist, related products) → Shopping Cart → Checkout (shipping/payment/review stepper) → Order Summary receipt, plus Order History with a delivery-status stepper              |
+| **Fleet Tracking** | `/fleet/*`     | Live Map (animated vehicle markers, geofenced risk zones, animated observability pipeline), Vehicles (status/fuel/driver table), Trip History (route replay with stop timeline), Alerts & Maintenance (severity-filtered alert feed)                                                 |
+| **Pages**          | `/pages/*`     | Common utility pages: Auth (links to the demo login screen at `/login`), Crud (searchable table with create/edit dialog and bulk delete), Invoice (printable document view), FAQ (searchable, categorized accordion), Contact Us (form + contact info), Empty (blank-state template) |
 
 Plus the shared "core": auth (demo login, route guard, persisted session), the dashboard shell, and Pinia stores.
 
@@ -61,6 +67,7 @@ More segments and pages will be added over time — contributions welcome.
 - [ApexCharts](https://apexcharts.com) for dashboard charts
 - [Leaflet](https://leafletjs.com) + [@vue-leaflet/vue-leaflet](https://github.com/vue-leaflet/vue-leaflet) for the Fleet Tracking map
 - [Vue Flow](https://vueflow.dev) for the animated observability pipeline
+- [QCalendar](https://qcalendar.netlify.app) (`@quasar/quasar-ui-qcalendar`) for the CRM Calendar's Day/Week scheduler
 - [Material Symbols Outlined](https://fonts.google.com/icons) for icons (remapped globally in [`src/boot/icon-map.ts`](./src/boot/icon-map.ts), no per-component changes needed)
 - [Inter](https://rsms.me/inter/) (self-hosted via `@fontsource-variable/inter`) as the default typeface
 - ESLint (flat config) + Prettier
@@ -119,6 +126,15 @@ The router runs in [history mode](https://v2.quasar.dev/quasar-cli-vite/quasar-c
 - [`public/_redirects`](./public/_redirects) — the same fallback rule, copied into the build output, used if you instead drag-and-drop `dist/spa` or deploy it from another CI
 
 Deploying to another static host (Vercel, Cloudflare Pages, S3, etc.)? Look for the equivalent "SPA fallback" / rewrite-all-to-`index.html` setting.
+
+### After deploying: a few SEO loose ends
+
+This repo ships with SEO basics already in place — Open Graph/Twitter meta tags (including a banner image at [`public/og-image.png`](./public/og-image.png)), `<meta name="description">`/`keywords`, `robots.txt` and `sitemap.xml`, currently pointed at the live demo's domain (`quasar-dashboard-pro.netlify.app`). If you fork this and deploy it elsewhere, a few things are domain-specific and need updating to **your** domain instead:
+
+- [`index.html`](./index.html) — `og:url`, `<link rel="canonical">`, and the `og:image`/`twitter:image` URLs.
+- [`public/sitemap.xml`](./public/sitemap.xml) — every `<loc>` (the sitemap spec requires absolute URLs, so this can't be relative).
+- Swap [`public/og-image.png`](./public/og-image.png) for your own banner if you rebrand the template.
+- On GitHub itself, set the repo's **Topics** (`quasar`, `vue3`, `admin-dashboard`, `dashboard-template`, ...) and a **Social preview image** (Settings → General) — this matters more for GitHub/Google discoverability of the template itself than any meta tag.
 
 ## AI-assisted development (MCP)
 

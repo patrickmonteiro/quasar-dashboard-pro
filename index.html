@@ -1,15 +1,51 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title><%= productName %></title>
+    <title><%= productName %> — Free Vue 3 + Quasar 2 Admin Dashboard Template</title>
 
     <meta charset="utf-8" />
-    <meta name="description" content="<%= productDescription %>" />
+    <meta
+      name="description"
+      content="<%= productDescription %> Finance, CRM, E-Commerce, Fleet Tracking and Pages modules included — 100% free, Apache-2.0 licensed."
+    />
+    <meta
+      name="keywords"
+      content="quasar dashboard template, quasar admin template, vue 3 admin dashboard, quasar 2 dashboard, free admin template, open source dashboard, vue dashboard template, typescript admin panel"
+    />
+    <meta name="author" content="Patrick Monteiro" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#4f46e5" />
     <meta name="format-detection" content="telephone=no" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover<% } %>"
     />
+
+    <!--
+      Set to the live demo's actual domain. If you fork this template and
+      deploy it elsewhere, update og:url / canonical / og:image below (and
+      public/sitemap.xml) to point at your own domain instead.
+    -->
+    <link rel="canonical" href="https://quasar-dashboard-pro.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<%= productName %>" />
+    <meta property="og:url" content="https://quasar-dashboard-pro.netlify.app/" />
+    <meta
+      property="og:title"
+      content="<%= productName %> — Free Vue 3 + Quasar 2 Admin Dashboard Template"
+    />
+    <meta property="og:description" content="<%= productDescription %>" />
+    <meta property="og:image" content="https://quasar-dashboard-pro.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="<%= productName %> — Free Vue 3 + Quasar 2 Admin Dashboard Template"
+    />
+    <meta name="twitter:description" content="<%= productDescription %>" />
+    <meta name="twitter:image" content="https://quasar-dashboard-pro.netlify.app/og-image.png" />
 
     <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />

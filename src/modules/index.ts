@@ -13,6 +13,9 @@ import { navSection as ecommerceNav } from './ecommerce/nav';
 import { routes as fleetRoutes } from './fleet/routes';
 import { navSection as fleetNav } from './fleet/nav';
 
+import { routes as pagesRoutes } from './pages/routes';
+import { navSection as pagesNav } from './pages/nav';
+
 /**
  * Registry of business-segment modules (finance, crm, ecommerce, fleet, erp, ...).
  *
@@ -26,6 +29,13 @@ export const moduleRoutes: RouteRecordRaw[] = [
   ...crmRoutes,
   ...ecommerceRoutes,
   ...fleetRoutes,
+  ...pagesRoutes,
 ];
 
-export const moduleNavSections: NavSection[] = [financeNav, crmNav, ecommerceNav, fleetNav];
+export const moduleNavSections: NavSection[] = [
+  financeNav,
+  crmNav,
+  ecommerceNav,
+  fleetNav,
+  pagesNav,
+];

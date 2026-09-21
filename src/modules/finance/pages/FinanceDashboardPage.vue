@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <div class="row q-col-gutter-md">
+    <div class="row q-col-gutter-md q-mb-md">
       <div class="col-12 col-md-4">
         <CreditScoreCard
           :score="780"
@@ -78,6 +78,8 @@
         />
       </div>
     </div>
+
+    <MoneyFlowDiagram />
   </q-page>
 </template>
 
@@ -88,6 +90,7 @@ import CurrencyCard from '../components/CurrencyCard.vue';
 import BudgetCard from '../components/BudgetCard.vue';
 import CreditScoreCard from '../components/CreditScoreCard.vue';
 import TransactionsTable from '../components/TransactionsTable.vue';
+import MoneyFlowDiagram from '../components/MoneyFlowDiagram.vue';
 import { accounts } from '../data/accounts';
 import { transactions } from '../data/transactions';
 

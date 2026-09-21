@@ -92,6 +92,17 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer
+      :class="uiStore.dark ? 'bg-dark text-grey-5' : 'bg-white text-grey-7'"
+      bordered
+      class="app-footer"
+    >
+      Developed by
+      <a href="https://github.com/patrickmonteiro" target="_blank" rel="noopener noreferrer">
+        Patrick Monteiro
+      </a>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -152,6 +163,22 @@ async function onLogout() {
 
   &__list {
     padding-bottom: 24px;
+  }
+}
+
+.app-footer {
+  padding: 8px 16px;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: var(--q-primary);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 </style>

@@ -13,6 +13,8 @@
       </div>
     </q-banner>
 
+    <FulfillmentFlow :current-step="order.deliveryStep" class="q-mb-md" />
+
     <div class="row q-col-gutter-md">
       <div class="col-12 col-md-8">
         <q-card v-for="item in order.items" :key="item.name" flat bordered class="q-mb-md">
@@ -111,6 +113,7 @@ import { computed } from 'vue';
 import { useQuasar } from 'quasar';
 import { latestOrder } from '../data/orders';
 import { useCartStore } from '../cart-store';
+import FulfillmentFlow from '../components/FulfillmentFlow.vue';
 
 const $q = useQuasar();
 const cart = useCartStore();

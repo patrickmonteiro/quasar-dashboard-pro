@@ -1,10 +1,12 @@
 <div align="center">
-  <img src=".github/logo.png" alt="Quasar Dashboard PRO" width="220" />
+  <img src="public/og-image.png" alt="Quasar Dashboard PRO" width="900" />
 
 # Quasar Dashboard PRO
 
 **Um template de dashboard administrativo gratuito e open source, feito com Vue 3, Quasar 2 e TypeScript.**
 Uma UI polida e pronta para negócios, que você pode usar direto em um produto real — não é mais um starter kit vazio.
+
+**[🔗 Demo ao vivo](https://quasar-dashboard-pro.netlify.app)**
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 ![Vue 3](https://img.shields.io/badge/Vue-3.x-42b883?logo=vuedotjs&logoColor=white)
@@ -23,6 +25,7 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 
 - **Módulos de negócio, não telas soltas** — Finance, CRM, E-Commerce e Fleet Tracking, cada um em uma pasta autocontida e fácil de copiar.
 - **Fluxos de UI reais** — um funil de checkout completo, um kanban com drag de negociações, uma caixa de entrada com painel de leitura, um mapa ao vivo com rastreamento animado de veículos — não apenas tabelas estáticas.
+- **Páginas utilitárias comuns incluídas** — exemplo de CRUD, fatura, FAQ, formulário de contato — para você não precisar construir do zero as páginas "chatas mas necessárias".
 - **Stack moderna, feita certo** — Vue 3 `<script setup>`, Quasar 2, TypeScript em tudo, Pinia, Vite. Sem Options API, sem resquícios de JavaScript puro.
 - **Um design system, não só componentes** — uma cor de destaque, um raio de borda, um padrão de diálogo de detalhes, aplicados de forma consistente em todos os módulos.
 - **Dark mode** que realmente parece finalizado, não uma inversão de cores feita às pressas.
@@ -31,21 +34,24 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 ## Funcionalidades
 
 - Estrutura de dashboard responsiva: sidebar agrupada e recolhível, header com alternância de dark mode, notificações e menu de conta
-- Fluxo de autenticação de demonstração com sessão persistida e proteção de rotas
+- O dashboard fica aberto por padrão — sem login obrigatório. Um fluxo de autenticação de demonstração (sessão persistida, proteção de rotas) está incluído e é fácil de reativar, em `/login`
 - Gráficos (ApexCharts) ajustados para ficarem corretos tanto no modo claro quanto no escuro
 - Um padrão compartilhado de `RecordDetailDialog`, para que toda lista/tabela do app abra detalhes da mesma forma
-- Um pipeline de observabilidade animado, com sensação de tempo real (feito com Vue Flow), e um efeito de "radar" pulsante nos marcadores do mapa ao vivo
+- Diagramas animados com Vue Flow espalhados pelos módulos, cada um com uma aparência própria — um pipeline de observabilidade em tempo real, um diagrama ramificado de fluxo de dinheiro, um funil de conversão afunilando, um rastreador de status de entrega — além de um efeito de "radar" pulsante nos marcadores do mapa ao vivo
+- Um calendário no estilo Google Calendar (visões Day/Week, criação de evento por clique, cores por evento), feito com [QCalendar](https://qcalendar.netlify.app)
 - Mapa com Leaflet, marcadores customizados e zonas de risco geolocalizadas — sem necessidade de chave de API
+- Um exemplo genérico de CRUD (busca, diálogo de criar/editar, exclusão em lote com confirmação) para copiar e usar nas suas próprias entidades
 - Totalmente tipado do início ao fim, com ESLint + Prettier configurados de forma estrita
 
 ## Módulos incluídos
 
-| Módulo             | Rotas          | O que tem dentro                                                                                                                                                                                                                                                                                               |
-| ------------------ | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Finance**        | `/finance/*`   | Overview (cards de moeda com sparklines, gráfico de receitas/despesas, distribuição de orçamento, medidor de score de crédito), Transactions (tabela completa de histórico), Accounts                                                                                                                          |
-| **CRM**            | `/crm/*`       | Overview (gráfico de pipeline por estágio, estatísticas de leads, próximas atividades), Leads (tabela completa), Deals (kanban por estágio), Mail (caixa de entrada com pastas, painel de leitura e composição)                                                                                                |
-| **E-Commerce**     | `/ecommerce/*` | Fluxo completo de produto até pedido: Products (grid com busca/filtro/ordenação) → detalhe do produto (galeria, quantidade, wishlist, produtos relacionados) → Shopping Cart → Checkout (stepper de envio/pagamento/revisão) → recibo de Order Summary, além de Order History com stepper de status de entrega |
-| **Fleet Tracking** | `/fleet/*`     | Live Map (marcadores animados de veículos, zonas de risco geolocalizadas, pipeline de observabilidade animado), Vehicles (tabela de status/combustível/motorista), Trip History (replay de rota com linha do tempo de paradas), Alerts & Maintenance (feed de alertas filtrável por severidade)                |
+| Módulo             | Rotas          | O que tem dentro                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Finance**        | `/finance/*`   | Overview (cards de moeda com sparklines, gráfico de receitas/despesas, distribuição de orçamento, medidor de score de crédito), Transactions (tabela completa de histórico), Accounts                                                                                                                                                       |
+| **CRM**            | `/crm/*`       | Overview (gráfico de pipeline por estágio, estatísticas de leads, próximas atividades), Leads (tabela completa), Deals (kanban por estágio, gráfico de valor de pipeline por owner), Mail (caixa de entrada com pastas, painel de leitura e composição), Calendar (agenda Day/Week no estilo Google Calendar)                               |
+| **E-Commerce**     | `/ecommerce/*` | Fluxo completo de produto até pedido: Products (grid com busca/filtro/ordenação) → detalhe do produto (galeria, quantidade, wishlist, produtos relacionados) → Shopping Cart → Checkout (stepper de envio/pagamento/revisão) → recibo de Order Summary, além de Order History com stepper de status de entrega                              |
+| **Fleet Tracking** | `/fleet/*`     | Live Map (marcadores animados de veículos, zonas de risco geolocalizadas, pipeline de observabilidade animado), Vehicles (tabela de status/combustível/motorista), Trip History (replay de rota com linha do tempo de paradas), Alerts & Maintenance (feed de alertas filtrável por severidade)                                             |
+| **Pages**          | `/pages/*`     | Páginas utilitárias comuns: Auth (link para a tela de login de demonstração em `/login`), Crud (tabela pesquisável com diálogo de criar/editar e exclusão em lote), Invoice (documento de fatura imprimível), FAQ (acordeão pesquisável e categorizado), Contact Us (formulário + informações de contato), Empty (template de estado vazio) |
 
 Além do "núcleo" compartilhado: autenticação (login de demonstração, proteção de rotas, sessão persistida), a estrutura do dashboard e as stores Pinia.
 
@@ -61,6 +67,7 @@ Mais segmentos e páginas serão adicionados com o tempo — contribuições sã
 - [ApexCharts](https://apexcharts.com) para os gráficos do dashboard
 - [Leaflet](https://leafletjs.com) + [@vue-leaflet/vue-leaflet](https://github.com/vue-leaflet/vue-leaflet) para o mapa do Fleet Tracking
 - [Vue Flow](https://vueflow.dev) para o pipeline de observabilidade animado
+- [QCalendar](https://qcalendar.netlify.app) (`@quasar/quasar-ui-qcalendar`) para a agenda Day/Week do módulo CRM
 - [Material Symbols Outlined](https://fonts.google.com/icons) para os ícones (remapeados globalmente em [`src/boot/icon-map.ts`](./src/boot/icon-map.ts), sem necessidade de alterar cada componente)
 - [Inter](https://rsms.me/inter/) (hospedada localmente via `@fontsource-variable/inter`) como fonte padrão
 - ESLint (flat config) + Prettier
@@ -119,6 +126,15 @@ O roteador roda em [modo history](https://v2.quasar.dev/quasar-cli-vite/quasar-c
 - [`public/_redirects`](./public/_redirects) — a mesma regra de fallback, copiada para dentro do build, usada caso você faça o deploy de `dist/spa` por drag-and-drop ou por outra CI
 
 Vai fazer o deploy em outro host estático (Vercel, Cloudflare Pages, S3, etc.)? Procure pela configuração equivalente de "SPA fallback" / reescrever tudo para `index.html`.
+
+### Depois do deploy: pontas soltas de SEO
+
+Este repositório já vem com o básico de SEO configurado — tags Open Graph/Twitter (incluindo uma imagem de banner em [`public/og-image.png`](./public/og-image.png)), `<meta name="description">`/`keywords`, `robots.txt` e `sitemap.xml`, atualmente apontando para o domínio da demo ao vivo (`quasar-dashboard-pro.netlify.app`). Se você fizer um fork e deployar em outro lugar, algumas coisas são específicas de domínio e precisam ser trocadas pelo **seu** domínio:
+
+- [`index.html`](./index.html) — `og:url`, `<link rel="canonical">`, e as URLs de `og:image`/`twitter:image`.
+- [`public/sitemap.xml`](./public/sitemap.xml) — todo `<loc>` (o protocolo de sitemap exige URLs absolutas, então não dá pra deixar relativo).
+- Troque [`public/og-image.png`](./public/og-image.png) pelo seu próprio banner caso troque a marca do template.
+- No GitHub, configure os **Topics** do repositório (`quasar`, `vue3`, `admin-dashboard`, `dashboard-template`, ...) e uma **imagem de social preview** (Settings → General) — isso pesa mais na descoberta do template no GitHub/Google do que qualquer meta tag.
 
 ## Desenvolvimento assistido por IA (MCP)
 

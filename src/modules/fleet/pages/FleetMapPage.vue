@@ -154,8 +154,7 @@ const referenceTileUrl = computed(() =>
     ? 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}'
     : 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
 );
-const tileAttribution =
-  'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, FAO, NOAA, USGS';
+const tileAttribution = 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, FAO, NOAA, USGS';
 
 const activeCount = computed(() => vehicles.filter((v) => v.status === 'Ignition On').length);
 const idleCount = computed(() => vehicles.filter((v) => v.status === 'Idle').length);

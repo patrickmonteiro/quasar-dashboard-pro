@@ -26,4 +26,9 @@ export const routes: RouteRecordRaw[] = [
     name: 'crm-mail',
     component: () => import('./pages/CrmMailPage.vue'),
   },
+  {
+    path: 'crm/calendar',
+    name: 'crm-calendar',
+    component: () => import('./pages/CrmCalendarPage.vue'),
+  },
 ];

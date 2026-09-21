@@ -7,5 +7,6 @@ export const navSection: NavSection = {
     { label: 'Leads', icon: 'person_search', to: '/crm/leads' },
     { label: 'Deals', icon: 'handshake', to: '/crm/deals' },
     { label: 'Mail', icon: 'mail', to: '/crm/mail' },
+    { label: 'Calendar', icon: 'calendar_month', to: '/crm/calendar' },
   ],
 };

@@ -34,6 +34,12 @@
       </div>
     </div>
 
+    <div class="row q-col-gutter-md q-mb-md">
+      <div class="col-12">
+        <ConversionFunnelFlow :stage-counts="stageCounts" />
+      </div>
+    </div>
+
     <LeadsTable :leads="leads" :limit="5" see-all-to="/crm/leads" />
   </q-page>
 </template>
@@ -44,6 +50,7 @@ import { useQuasar } from 'quasar';
 import CrmStatCard from '../components/CrmStatCard.vue';
 import LeadsTable from '../components/LeadsTable.vue';
 import ActivitiesList from '../components/ActivitiesList.vue';
+import ConversionFunnelFlow from '../components/ConversionFunnelFlow.vue';
 import { leads } from '../data/leads';
 
 const $q = useQuasar();
@@ -98,6 +105,10 @@ const activities = [
   { id: '3', icon: 'mail', title: 'Follow-up email', with: 'Bluewave', when: 'Fri, 9:00 AM' },
 ];
 
+// Illustrative deal counts by stage — shared by the bar chart above and the
+// conversion funnel below, so both visualizations of the same pipeline agree.
+const stageCounts = [42, 31, 22, 14, 9];
+
 const pipelineChart = computed(() => ({
   options: {
     chart: { toolbar: { show: false }, background: $q.dark.isActive ? '#18181b' : '#ffffff' },
@@ -108,6 +119,6 @@ const pipelineChart = computed(() => ({
     colors: ['#4f46e5'],
     grid: { strokeDashArray: 4, borderColor: $q.dark.isActive ? '#3f3f46' : '#e5e7eb' },
   },
-  series: [{ name: 'Deals', data: [42, 31, 22, 14, 9] }],
+  series: [{ name: 'Deals', data: stageCounts }],
 }));
 </script>

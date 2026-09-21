@@ -14,6 +14,12 @@ importers:
       '@quasar/extras':
         specifier: ^2.1.0
         version: 2.1.0
+      '@quasar/quasar-ui-qcalendar':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@timestamp-js/core':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@vue-flow/core':
         specifier: ^1.48.2
         version: 1.48.2(vue@3.5.43(typescript@6.0.3))
@@ -413,6 +419,10 @@ packages:
   '@quasar/extras@2.1.0':
     resolution: {integrity: sha512-WCqHXr3loA9bP1DUuzmCwuNXnHa9GKosAtjwJnr1DpngO68a0JoiyVuoXzc760tCBArdFLD/YAUHvItPbk6V2Q==}
 
+  '@quasar/quasar-ui-qcalendar@5.3.0':
+    resolution: {integrity: sha512-i8sp5GFLYW7Szy0ZLmsfITvChnkMEThdollAEsHFx4BdtgxvOZ3Q4KtQlJ6/rwl8mkp6v9ejxPLwatwz//Aw6Q==}
+    engines: {node: '>=22.13', pnpm: '>=11.5.0'}
+
   '@quasar/render-ssr-error@2.2.6':
     resolution: {integrity: sha512-v8Q/uxmPwlBbN6lC/fObFk564A7CGFTVnObmdchhDMj817t17P6RsIyFVA8BUwuW0MdG2AWrrjpbhnXIgzuzvA==}
     engines: {node: '>= 16'}
@@ -528,6 +538,10 @@ packages:
 
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
+
+  '@timestamp-js/core@1.0.0':
+    resolution: {integrity: sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==}
+    engines: {node: '>=22.13', pnpm: '>=11.5.0'}
 
   '@types/chrome@0.3.0':
     resolution: {integrity: sha512-HPAMKyJwUnNJdVsxgypwvIStlwRhhaLnxgEwKIB99oOcffJrC4UMeD5xseVoBwDinSkr690DCBaAtSYdK6M1qw==}
@@ -2471,6 +2485,10 @@ snapshots:
 
   '@quasar/extras@2.1.0': {}
 
+  '@quasar/quasar-ui-qcalendar@5.3.0':
+    dependencies:
+      '@timestamp-js/core': 1.0.0
+
   '@quasar/render-ssr-error@2.2.6':
     dependencies:
       stack-trace: 1.0.0
@@ -2533,6 +2551,8 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
+
+  '@timestamp-js/core@1.0.0': {}
 
   '@types/chrome@0.3.0':
     dependencies:
