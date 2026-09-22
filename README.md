@@ -21,11 +21,11 @@ Polished, business-ready UI you can drop straight into a real product — not an
 
 ## Why this template
 
-Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard PRO is organized as **ready-to-use business modules** — Finance, CRM, E-Commerce, Fleet Tracking, Support — each with real, connected flows (not just isolated screens), so you can delete what you don't need and ship the rest.
+Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard PRO is organized as **ready-to-use business modules** — Finance, CRM, E-Commerce, Fleet Tracking, Support, Security Ops — each with real, connected flows (not just isolated screens), so you can delete what you don't need and ship the rest.
 
-- **Business modules, not demo pages** — Finance, CRM, E-Commerce, Fleet Tracking and Support, each a self-contained, copy-pasteable folder.
-- **Real UI flows** — a full checkout funnel, a kanban you can drag deals across, an inbox with a reading pane, a live map with animated vehicle tracking, a live chat inbox with conversation routing — not just static tables.
-- **Common utility pages included** — CRUD example, invoice, FAQ, contact form — so you're not building the boring-but-necessary pages from scratch either.
+- **Business modules, not demo pages** — Finance, CRM, E-Commerce, Fleet Tracking, Support and Security Ops, each a self-contained, copy-pasteable folder.
+- **Real UI flows** — a full checkout funnel, a kanban you can drag deals across, an inbox with a reading pane, a live map with animated vehicle tracking, a live chat inbox with conversation routing, a world threat map — not just static tables.
+- **Common utility pages included** — CRUD example, file manager, invoice, FAQ, contact form — so you're not building the boring-but-necessary pages from scratch either.
 - **Modern stack, done right** — Vue 3 `<script setup>`, Quasar 2, TypeScript everywhere, Pinia, Vite. No Options API, no JavaScript-only leftovers.
 - **A design system, not just components** — one accent color, one corner radius, one detail-dialog pattern, applied consistently across every module.
 - **Dark mode** that actually looks finished, not an inverted afterthought.
@@ -37,7 +37,7 @@ Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard 
 - The dashboard is open by default — no forced login. A demo authentication flow (persisted session, route guard) is included and easy to re-enable, at `/login`
 - Charts (ApexCharts) tuned to look correct in both light and dark mode
 - A shared `RecordDetailDialog` pattern so every list/table in the app opens details the same way
-- Animated Vue Flow diagrams across modules, each with its own distinct look — a real-time observability pipeline, a branching money-flow diagram, a narrowing conversion funnel, a fulfillment status tracker, a hub-and-spoke conversation routing diagram — plus a pulsing "radar" effect on live map markers
+- Animated Vue Flow diagrams across modules, each with its own distinct look — a real-time observability pipeline, a branching money-flow diagram, a narrowing conversion funnel, a fulfillment status tracker, a hub-and-spoke conversation routing diagram, a V-shaped threat-response timeline — plus a pulsing "radar" effect on live map markers
 - A Google Calendar-style scheduler (Day/Week views, drag-free click-to-create, color-coded events) built with [QCalendar](https://qcalendar.netlify.app)
 - Leaflet-powered map with custom markers and geofenced risk zones — no API key required
 - A generic CRUD example (search, create/edit dialog, bulk delete with confirmation) to copy for your own entities
@@ -45,14 +45,15 @@ Most free admin dashboards are a pile of unrelated demo pages. Quasar Dashboard 
 
 ## Modules included
 
-| Module             | Routes         | What's inside                                                                                                                                                                                                                                                                        |
-| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Finance**        | `/finance/*`   | Overview (currency cards with sparklines, income/expenditure chart, budget breakdown, credit score gauge), Transactions (full history table), Accounts                                                                                                                               |
-| **CRM**            | `/crm/*`       | Overview (pipeline-by-stage chart, lead stats, upcoming activities), Leads (full table), Deals (kanban board by stage, pipeline-value chart by owner), Mail (inbox with folders, reading pane and compose), Calendar (Google Calendar-style Day/Week scheduler)                      |
-| **E-Commerce**     | `/ecommerce/*` | Full product-to-order flow: Products (search/filter/sort grid) → product detail (gallery, quantity, wishlist, related products) → Shopping Cart → Checkout (shipping/payment/review stepper) → Order Summary receipt, plus Order History with a delivery-status stepper              |
-| **Fleet Tracking** | `/fleet/*`     | Live Map (animated vehicle markers, geofenced risk zones, animated observability pipeline), Vehicles (status/fuel/driver table), Trip History (route replay with stop timeline), Alerts & Maintenance (severity-filtered alert feed)                                                 |
-| **Support**        | `/support/*`   | Overview (conversation/CSAT stats, animated hub-and-spoke conversation-routing diagram, tickets-by-channel chart), Inbox (live chat with conversation list, message bubbles and composer), Tickets (full helpdesk ticket table)                                                      |
-| **Pages**          | `/pages/*`     | Common utility pages: Auth (links to the demo login screen at `/login`), Crud (searchable table with create/edit dialog and bulk delete), Invoice (printable document view), FAQ (searchable, categorized accordion), Contact Us (form + contact info), Empty (blank-state template) |
+| Module             | Routes         | What's inside                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Finance**        | `/finance/*`   | Overview (currency cards with sparklines, income/expenditure chart, budget breakdown, credit score gauge), Transactions (full history table), Accounts                                                                                                                                                                                                            |
+| **CRM**            | `/crm/*`       | Overview (pipeline-by-stage chart, lead stats, upcoming activities), Leads (full table), Deals (kanban board by stage, pipeline-value chart by owner), Mail (inbox with folders, reading pane and compose), Calendar (Google Calendar-style Day/Week scheduler)                                                                                                   |
+| **E-Commerce**     | `/ecommerce/*` | Full product-to-order flow: Products (search/filter/sort grid) → product detail (gallery, quantity, wishlist, related products) → Shopping Cart → Checkout (shipping/payment/review stepper) → Order Summary receipt, plus Order History with a delivery-status stepper                                                                                           |
+| **Fleet Tracking** | `/fleet/*`     | Live Map (animated vehicle markers, geofenced risk zones, animated observability pipeline), Vehicles (status/fuel/driver table), Trip History (route replay with stop timeline), Alerts & Maintenance (severity-filtered alert feed)                                                                                                                              |
+| **Support**        | `/support/*`   | Overview (conversation/CSAT stats, animated hub-and-spoke conversation-routing diagram, tickets-by-channel chart), Inbox (live chat with conversation list, message bubbles and composer), Tickets (full helpdesk ticket table)                                                                                                                                   |
+| **Security Ops**   | `/security/*`  | Overview (threat stats, animated V-shaped threat-response timeline, incidents-by-severity chart), Incidents (full incident table with source/target/severity), Threat Map (world map of attack sources with severity-coded pulsing markers)                                                                                                                       |
+| **Pages**          | `/pages/*`     | Common utility pages: Auth (links to the demo login screen at `/login`), Crud (searchable table with create/edit dialog and bulk delete), File Manager (folder tree, storage-usage gauge, starred/shared/trash views), Invoice (printable document view), FAQ (searchable, categorized accordion), Contact Us (form + contact info), Empty (blank-state template) |
 
 Plus the shared "core": auth (demo login, route guard, persisted session), the dashboard shell, and Pinia stores.
 
@@ -66,7 +67,7 @@ More segments and pages will be added over time — contributions welcome.
 - [Pinia](https://pinia.vuejs.org) for state management
 - [Vue Router](https://router.vuejs.org) (history mode) with a navigation guard for authenticated routes
 - [ApexCharts](https://apexcharts.com) for dashboard charts
-- [Leaflet](https://leafletjs.com) + [@vue-leaflet/vue-leaflet](https://github.com/vue-leaflet/vue-leaflet) for the Fleet Tracking map
+- [Leaflet](https://leafletjs.com) + [@vue-leaflet/vue-leaflet](https://github.com/vue-leaflet/vue-leaflet) for the Fleet Tracking and Security Ops threat maps
 - [Vue Flow](https://vueflow.dev) for the animated observability pipeline
 - [QCalendar](https://qcalendar.netlify.app) (`@quasar/quasar-ui-qcalendar`) for the CRM Calendar's Day/Week scheduler
 - [Material Symbols Outlined](https://fonts.google.com/icons) for icons (remapped globally in [`src/boot/icon-map.ts`](./src/boot/icon-map.ts), no per-component changes needed)

@@ -5,6 +5,7 @@ export const navSection: NavSection = {
   items: [
     { label: 'Auth', icon: 'login', to: '/login' },
     { label: 'Crud', icon: 'edit', to: '/pages/crud' },
+    { label: 'File Manager', icon: 'folder_open', to: '/pages/file-manager' },
     { label: 'Invoice', icon: 'attach_money', to: '/pages/invoice' },
     { label: 'FAQ', icon: 'help', to: '/pages/faq' },
     { label: 'Contact Us', icon: 'call', to: '/pages/contact' },

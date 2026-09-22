@@ -11,6 +11,11 @@ import type { RouteRecordRaw } from 'vue-router';
 export const routes: RouteRecordRaw[] = [
   { path: 'pages/crud', name: 'pages-crud', component: () => import('./pages/CrudPage.vue') },
   {
+    path: 'pages/file-manager',
+    name: 'pages-file-manager',
+    component: () => import('./pages/FileManagerPage.vue'),
+  },
+  {
     path: 'pages/invoice',
     name: 'pages-invoice',
     component: () => import('./pages/InvoicePage.vue'),
