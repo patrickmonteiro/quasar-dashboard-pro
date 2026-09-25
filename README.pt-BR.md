@@ -21,9 +21,9 @@ Uma UI polida e pronta para negócios, que você pode usar direto em um produto 
 
 ## Por que este template
 
-A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem relação entre si. O Quasar Dashboard PRO é organizado em **módulos de negócio prontos para uso** — Finance, CRM, E-Commerce, Fleet Tracking, Support, Security Ops — cada um com fluxos reais e conectados (não apenas telas isoladas), para você remover o que não precisa e lançar o resto.
+A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem relação entre si. O Quasar Dashboard PRO é organizado em **módulos de negócio prontos para uso** — Finance, CRM, E-Commerce, Fleet Tracking, Support, Security Ops, Crypto — cada um com fluxos reais e conectados (não apenas telas isoladas), para você remover o que não precisa e lançar o resto.
 
-- **Módulos de negócio, não telas soltas** — Finance, CRM, E-Commerce, Fleet Tracking, Support e Security Ops, cada um em uma pasta autocontida e fácil de copiar.
+- **Módulos de negócio, não telas soltas** — Finance, CRM, E-Commerce, Fleet Tracking, Support, Security Ops e Crypto, cada um em uma pasta autocontida e fácil de copiar.
 - **Fluxos de UI reais** — um funil de checkout completo, um kanban com drag de negociações, uma caixa de entrada com painel de leitura, um mapa ao vivo com rastreamento animado de veículos, uma caixa de chat ao vivo com roteamento de conversas, um mapa mundial de ameaças — não apenas tabelas estáticas.
 - **Páginas utilitárias comuns incluídas** — exemplo de CRUD, gerenciador de arquivos, fatura, FAQ, formulário de contato — para você não precisar construir do zero as páginas "chatas mas necessárias".
 - **Stack moderna, feita certo** — Vue 3 `<script setup>`, Quasar 2, TypeScript em tudo, Pinia, Vite. Sem Options API, sem resquícios de JavaScript puro.
@@ -39,6 +39,7 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 - Um padrão compartilhado de `RecordDetailDialog`, para que toda lista/tabela do app abra detalhes da mesma forma
 - Diagramas animados com Vue Flow espalhados pelos módulos, cada um com uma aparência própria — um pipeline de observabilidade em tempo real, um diagrama ramificado de fluxo de dinheiro, um funil de conversão afunilando, um rastreador de status de entrega, um diagrama radial de roteamento de conversas, uma linha do tempo de resposta a ameaças em formato de "V" — além de um efeito de "radar" pulsante nos marcadores do mapa ao vivo
 - Um calendário no estilo Google Calendar (visões Day/Week, criação de evento por clique, cores por evento), feito com [QCalendar](https://qcalendar.netlify.app)
+- Um exemplo de integração com API real: o módulo Crypto consome a API pública do CoinGecko através de uma camada de dados padronizada com `services` + `composables` (`fetch` nativo, erros tipados, timeouts, retries, cache, atualização automática)
 - Mapa com Leaflet, marcadores customizados e zonas de risco geolocalizadas — sem necessidade de chave de API
 - Um exemplo genérico de CRUD (busca, diálogo de criar/editar, exclusão em lote com confirmação) para copiar e usar nas suas próprias entidades
 - Totalmente tipado do início ao fim, com ESLint + Prettier configurados de forma estrita
@@ -53,6 +54,7 @@ A maioria dos dashboards gratuitos é uma pilha de telas de demonstração sem r
 | **Fleet Tracking** | `/fleet/*`     | Live Map (marcadores animados de veículos, zonas de risco geolocalizadas, pipeline de observabilidade animado), Vehicles (tabela de status/combustível/motorista), Trip History (replay de rota com linha do tempo de paradas), Alerts & Maintenance (feed de alertas filtrável por severidade)                                                                                                                                                           |
 | **Support**        | `/support/*`   | Overview (estatísticas de conversas/CSAT, diagrama animado radial de roteamento de conversas, gráfico de tickets por canal), Inbox (chat ao vivo com lista de conversas, balões de mensagem e campo de resposta), Tickets (tabela completa de tickets de suporte)                                                                                                                                                                                         |
 | **Security Ops**   | `/security/*`  | Overview (estatísticas de ameaças, linha do tempo animada de resposta a ameaças em "V", gráfico de incidentes por severidade), Incidents (tabela completa de incidentes com origem/alvo/severidade), Threat Map (mapa mundial das origens de ataque com marcadores pulsantes por severidade)                                                                                                                                                              |
+| **Crypto**         | `/crypto/*`    | Dados ao vivo da [API pública do CoinGecko](https://docs.coingecko.com) (sem chave): Market (cards de market cap global/volume/dominância do BTC, maiores altas/quedas, moedas em alta, tabela de preços do top 100 com sparklines de 7 dias e busca) → detalhe da moeda (gráfico de preço com períodos 24H/7D/30D/90D/1Y, estatísticas de mercado, faixa de 24h, performance, sentimento da comunidade, descrição)                                       |
 | **Pages**          | `/pages/*`     | Páginas utilitárias comuns: Auth (link para a tela de login de demonstração em `/login`), Crud (tabela pesquisável com diálogo de criar/editar e exclusão em lote), File Manager (árvore de pastas, medidor de uso de armazenamento, visões de favoritos/compartilhados/lixeira), Invoice (documento de fatura imprimível), FAQ (acordeão pesquisável e categorizado), Contact Us (formulário + informações de contato), Empty (template de estado vazio) |
 
 Além do "núcleo" compartilhado: autenticação (login de demonstração, proteção de rotas, sessão persistida), a estrutura do dashboard e as stores Pinia.
@@ -70,6 +72,7 @@ Mais segmentos e páginas serão adicionados com o tempo — contribuições sã
 - [Leaflet](https://leafletjs.com) + [@vue-leaflet/vue-leaflet](https://github.com/vue-leaflet/vue-leaflet) para os mapas do Fleet Tracking e do Security Ops
 - [Vue Flow](https://vueflow.dev) para o pipeline de observabilidade animado
 - [QCalendar](https://qcalendar.netlify.app) (`@quasar/quasar-ui-qcalendar`) para a agenda Day/Week do módulo CRM
+- `fetch` nativo (sem axios) por trás de um cliente de API central em [`src/services/api-client.ts`](./src/services/api-client.ts), usado pelo módulo Crypto para consumir a [API do CoinGecko](https://docs.coingecko.com)
 - [Material Symbols Outlined](https://fonts.google.com/icons) para os ícones (remapeados globalmente em [`src/boot/icon-map.ts`](./src/boot/icon-map.ts), sem necessidade de alterar cada componente)
 - [Inter](https://rsms.me/inter/) (hospedada localmente via `@fontsource-variable/inter`) como fonte padrão
 - ESLint (flat config) + Prettier
@@ -79,6 +82,20 @@ Mais segmentos e páginas serão adicionados com o tempo — contribuições sã
 Em vez de um dashboard genérico único, as páginas são organizadas **por segmento de negócio** em `src/modules/<segmento>/`, cada um autocontido (`pages/`, `components/`, `data/`, `routes.ts`, `nav.ts`). Registrar um módulo são duas linhas em [`src/modules/index.ts`](./src/modules/index.ts) — assim um módulo pode ser copiado para outro projeto sem arrastar o resto da aplicação junto.
 
 Cada módulo contribui com seu próprio grupo rotulado na sidebar (ex.: **Finance** → Overview / Transactions / Accounts), o mesmo padrão de "seção + subpáginas" usado pela maioria dos templates de dashboard administrativo.
+
+## Camada de dados: services & composables
+
+Módulos que conversam com uma API real usam três camadas, para que as páginas nunca chamem `fetch` diretamente:
+
+```
+Página/componente → composable (estado de UI) → service (recurso da API) → api-client (HTTP)
+```
+
+- **[`src/services/api-client.ts`](./src/services/api-client.ts)** — o único lugar central que configura e padroniza as chamadas HTTP. `createApiClient({ baseURL, headers, query, timeoutMs, retry })` retorna um cliente tipado (`get`/`post`/`put`/`patch`/`delete`) sobre o `fetch` nativo, com tratamento de JSON, timeouts e cancelamento (`AbortSignal`), retries com backoff para erros de rede/5xx/429, um cache opcional de curta duração para GET e um único tipo `ApiError` com `code` normalizado (`HTTP`, `RATE_LIMITED`, `TIMEOUT`, `NETWORK`, `ABORTED`, `PARSE`).
+- **`src/services/<api>/`** — uma pasta por API externa (ex.: [`src/services/coingecko/`](./src/services/coingecko)): a instância do cliente, os tipos crus da resposta (`*.dto.ts`), os modelos usados pelo app (`*.models.ts`), os mappers de DTO para modelo e um objeto de service por recurso (`marketService`, `coinService`). O código de UI só enxerga os modelos já mapeados.
+- **Composables** — [`src/composables/useApiRequest.ts`](./src/composables/useApiRequest.ts) é o bloco genérico (`data`, `pending`, `error`, `lastUpdated`, `refresh`, polling opcional que pausa com a aba oculta, cancelamento ao desmontar). Cada módulo o envolve em composables de domínio (ex.: `src/modules/crypto/composables/useCoinMarkets.ts`).
+
+Por que `fetch` em vez de axios: o axios ainda tem mais downloads no npm, mas em código frontend novo a tendência é o `fetch` nativo por trás de um wrapper pequeno — ele já vem em todo navegador, faz timeout e cancelamento nativamente e não adiciona dependência. Como os services dependem só da interface do `api-client`, trocar para axios no futuro significa alterar um único arquivo.
 
 ## Convenções de UI
 
@@ -98,6 +115,12 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+### Variáveis de ambiente (opcional)
+
+Copie [`.env.example`](./.env.example) para `.env` e reinicie o servidor de desenvolvimento. Apenas variáveis com prefixo `QCLI_` chegam ao bundle do navegador.
+
+- `QCLI_COINGECKO_API_KEY` — uma chave **Demo** gratuita do CoinGecko. O módulo Crypto funciona sem ela, mas o acesso sem chave tem limite de requisições bem baixo (a UI mostra um aviso de "rate limit reached" com botão de tentar novamente). Nunca coloque uma chave paga/Pro aqui: tudo que vai no bundle do frontend é público.
 
 ### Lint & formatação
 

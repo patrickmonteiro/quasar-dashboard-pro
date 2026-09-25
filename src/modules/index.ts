@@ -19,6 +19,9 @@ import { navSection as supportNav } from './support/nav';
 import { routes as securityRoutes } from './security/routes';
 import { navSection as securityNav } from './security/nav';
 
+import { routes as cryptoRoutes } from './crypto/routes';
+import { navSection as cryptoNav } from './crypto/nav';
+
 import { routes as pagesRoutes } from './pages/routes';
 import { navSection as pagesNav } from './pages/nav';
 
@@ -37,6 +40,7 @@ export const moduleRoutes: RouteRecordRaw[] = [
   ...fleetRoutes,
   ...supportRoutes,
   ...securityRoutes,
+  ...cryptoRoutes,
   ...pagesRoutes,
 ];
 
@@ -47,5 +51,6 @@ export const moduleNavSections: NavSection[] = [
   fleetNav,
   supportNav,
   securityNav,
+  cryptoNav,
   pagesNav,
 ];

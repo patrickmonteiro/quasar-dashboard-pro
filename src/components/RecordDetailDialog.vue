@@ -30,6 +30,13 @@
           </div>
         </div>
       </q-card-section>
+
+      <template v-if="$slots.actions">
+        <q-separator />
+        <q-card-actions align="right">
+          <slot name="actions" />
+        </q-card-actions>
+      </template>
     </q-card>
   </q-dialog>
 </template>
@@ -48,6 +55,8 @@
  *     dialog.value = true;
  *   }
  *   <RecordDetailDialog v-model="dialog" title="..." :fields="fields" />
+ *
+ * Optional `#actions` slot renders a footer (e.g. a "View details" link to a full page).
  */
 
 export interface DetailField {

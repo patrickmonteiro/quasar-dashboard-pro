@@ -18,9 +18,19 @@ The UI follows the PrimeNG **"Diamond"** template (https://diamond.primeng.dev) 
 
 ## Architecture: business-segment modules
 
-Pages are organized **by business segment** under `src/modules/<segment>/`, each self-contained: `pages/`, `components/`, `data/`, `routes.ts`, `nav.ts`. A module is registered with two lines in [`src/modules/index.ts`](./src/modules/index.ts) (`moduleRoutes`, `moduleNavSections`) — the whole point is that a module folder can be copied into another project largely as-is. Current modules: `finance`, `crm` (includes a Calendar page), `ecommerce`, `fleet`, `pages` (generic utility pages: Auth — a nav link to the existing `/login` route, not its own page/route — Crud, Invoice, FAQ, Contact Us, Empty).
+Pages are organized **by business segment** under `src/modules/<segment>/`, each self-contained: `pages/`, `components/`, `data/`, `routes.ts`, `nav.ts`. A module is registered with two lines in [`src/modules/index.ts`](./src/modules/index.ts) (`moduleRoutes`, `moduleNavSections`) — the whole point is that a module folder can be copied into another project largely as-is. Current modules: `finance`, `crm` (includes a Calendar page), `ecommerce`, `fleet`, `support`, `security`, `crypto` (live CoinGecko data), `pages` (generic utility pages: Auth — a nav link to the existing `/login` route, not its own page/route — Crud, Invoice, FAQ, Contact Us, Empty).
 
 When adding a new module, follow this same shape — don't scatter pages outside `src/modules/`.
+
+## Data layer for real APIs
+
+Pages never call `fetch` directly: **page → composable → service → api-client**.
+
+- [`src/services/api-client.ts`](./src/services/api-client.ts) is the single central HTTP layer (native `fetch`, no axios): `createApiClient({ baseURL, headers, query, timeoutMs, retry })`, typed `ApiError` with a normalized `code`, timeouts/abort, retries on network/5xx/429, optional GET `cacheTtlMs`.
+- One folder per external API under `src/services/<api>/` (see `coingecko/`): client instance, `*.dto.ts` (raw snake_case), `*.models.ts` (camelCase, what the UI sees), mappers, and service objects per resource (`marketService.getMarkets(...)`). Services take `{ signal }` and return mapped models.
+- [`src/composables/useApiRequest.ts`](./src/composables/useApiRequest.ts) is the generic async-state building block (`data`/`pending`/`error`/`lastUpdated`/`refresh`, polling paused while the tab is hidden, abort on unmount); modules wrap it in domain composables under `src/modules/<segment>/composables/`.
+- Client-side env vars must be `QCLI_`-prefixed (Quasar app-vite's default client prefix), read via `import.meta.env.QCLI_*`; document new ones in `.env.example` (un-ignored in `.gitignore`).
+- CoinGecko: keyless works but is heavily rate-limited; the optional Demo key goes in the `x_cg_demo_api_key` **query param** (its CORS preflight rejects the custom header).
 
 ## UI conventions
 
