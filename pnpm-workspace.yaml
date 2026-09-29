@@ -9,3 +9,6 @@ allowBuilds:
   rolldown: true
   unrs-resolver: true
   vue-demi: true
+minimumReleaseAgeExclude:
+  - quasar@2.34.0
+  - '@quasar/app-vite@3.10.1'
